@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 
+
 //= require jquery-2.2.4.min
 //= require popper.min
 //= require bootstrap.min
