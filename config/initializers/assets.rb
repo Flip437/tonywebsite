@@ -13,9 +13,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts")
+
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts", "bootstrap")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts", "jquery")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts", "plugins")
-Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
-Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets", "css")
+
