@@ -10,15 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery-migrate-min
-//= require jquery_ujs
-//= require turbolinks
 
+//= require jquery
+//= require jquery_ujs
+//= require popper
 //= require plugins
 //= require jquery-2.2.4.min
 //= require popper.min
 //= require bootstrap.min
 //= require active
-
-//= require_tree .
