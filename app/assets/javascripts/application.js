@@ -11,11 +11,10 @@
 // about supported directives.
 //
 
+
 //= require jquery
 //= require jquery_ujs
 //= require popper
+//= require bootstrap
 //= require plugins
-//= require jquery-2.2.4.min
-//= require popper.min
-//= require bootstrap.min
 //= require active
