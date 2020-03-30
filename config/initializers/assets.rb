@@ -20,7 +20,6 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javas
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javascripts", "channels")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javascripts", "jquery")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javascripts", "plugins")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "bg-img")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "core-img")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "audio")
