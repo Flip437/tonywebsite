@@ -19,3 +19,4 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "style
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "bg-img")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "core-img")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "audio")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts")
