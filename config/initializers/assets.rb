@@ -25,8 +25,8 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "audio
 #Rails.application.config.assets.precompile += %w(core-img)
 #Rails.application.config.assets.precompile << Rails.root.join('app','assets','images')
 
-Dir[ Rails.root.join('app','assets','images','*/') ].each do |dir|
-    dir = Pathname.new(dir)
-    Rails.application.config.assets.precompile += Dir[ dir.join('**','*') ].select{ |f| File.file?(f) }.map{ |f|                      
-    Pathname.new(f).relative_path_from(dir).to_s }
-  end
+# Dir[ Rails.root.join('app','assets','images','*/') ].each do |dir|
+#     dir = Pathname.new(dir)
+#     Rails.application.config.assets.precompile += Dir[ dir.join('**','*') ].select{ |f| File.file?(f) }.map{ |f|                      
+#     Pathname.new(f).relative_path_from(dir).to_s }
+#   end
