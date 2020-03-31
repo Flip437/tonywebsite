@@ -14,6 +14,7 @@ gem 'puma', '~> 3.11'
  gem 'jquery-rails'
  gem 'bootstrap', '~> 4.4.1'
 # gem 'sprockets-rails', :require => 'sprockets/railtie'
+  gem 'sprockets-rails', '3.2.1'
 # gem 'font-awesome-sass'
 # gem "font-awesome-rails"
  gem 'popper_js', '~> 1.16.0'
