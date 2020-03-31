@@ -21,4 +21,4 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "image
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "audio")
 
 
-Rails.application.config.assets.precompile = %w(favicon.ico)
+#Rails.application.config.assets.precompile = %w(favicon.ico)
