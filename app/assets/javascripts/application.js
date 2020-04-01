@@ -17,3 +17,5 @@
 //= require bootstrap
 //= require plugins
 //= require active
+//= require gallery
+//= require jquery.fancybox.min
