@@ -20,6 +20,9 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "image
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "core-img")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "audio")
 
+Rails.application.config.assets.paths += Dir["#{Rails.root}/lib/assets/*"].sort_by { |dir| -dir.size }
+
+
 
 #Rails.application.config.assets.precompile = %w(favicon.ico)
 #Rails.application.config.assets.precompile += %w(core-img)

@@ -17,3 +17,4 @@
 //= require bootstrap
 //= require plugins
 //= require active
+//= require gallery
