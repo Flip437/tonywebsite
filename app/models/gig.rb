@@ -1,4 +1,4 @@
 class Gig < ApplicationRecord
-    validates :title, :date, :place, :streetnumb, :streettype, :streetname, presence: true
+    validates :title, :day, :month, :year, :place, :streetnumb, :streettype, :streetname, presence: true
 
 end

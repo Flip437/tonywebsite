@@ -1,8 +1,7 @@
 class GigController < ApplicationController
-  def index
-  end
 
-  def show
+  def index
+    @gigs = Gig.all
   end
 
   def new
@@ -10,19 +9,17 @@ class GigController < ApplicationController
   end
 
   def create
-    puts "PARAMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
-    puts params
-# essayer avec un form for au lieu de for with
     @gig = Gig.create(
-      date: params[:date],
-      title: params[:title],
-      description: params[:description],
-      place: params[:place],
-      streetnumb: params[:streetnumb],
-      streettype: params[:streettype],
-      streetname: params[:streetname]
+      day: params[:gig][:day].to_i,
+      month: params[:gig][:month].to_i,
+      year: params[:gig][:year].to_i,
+      title: params[:gig][:title],
+      description: params[:gig][:description],
+      place: params[:gig][:place],
+      streetnumb: params[:gig][:streetnumb],
+      streettype: params[:gig][:streettype],
+      streetname: params[:gig][:streetname]
     )
-
     if @gig
       #flash[:success] = "Livre ajouté à votre bibliothèque:)"
       redirect_to new_gig_path
@@ -30,9 +27,14 @@ class GigController < ApplicationController
       #flash[:error] = "Erreur d'ajout du livre :("
       redirect_to root_path
     end
+  end
 
+  def show
+    @gig = Gig.find(params[:id])
   end
 
   def edit
+    @gig = Gig.find(params[:id])
   end
+
 end

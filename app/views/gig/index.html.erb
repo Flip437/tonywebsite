@@ -13,32 +13,34 @@
         <div class="row">
             <div class="col-12 col-lg-9">
 
-                <!-- Single Post Start -->
-                <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Post Thumb -->
-                    <div class="blog-post-thumb mt-30">
-                    <br><br>
-                        <!-- Post Date -->
-                        <div class="post-date">
-                            <span>15</span>
-                            <span>June ‘18</span>
+                <% @gigs.each do |gig| %>            
+                    <!-- Single Post Start -->
+                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Post Thumb -->
+                        <div class="blog-post-thumb mt-30">
+                        <br><br>
+                            <!-- Post Date -->
+                            <div class="post-date">
+                                <span> <%= gig.day %> </span>
+                                <span> <%=gig.month%> ‘<%=gig.year%> </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Post Title -->
-                        <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
-                        <!-- Post Meta -->
-                        <div class="post-meta d-flex mb-30">
-                            <p class="post-author">By<a href="#"> Admin</a></p>
-                            <p class="tags">in<a href="#"> Events</a></p>
-                            <p class="tags"><a href="#">2 Comments</a></p>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Post Title -->
+                            <%=link_to gig.title, gig_path(gig), class:"post-title"%>
+                            <!-- Post Meta -->
+                            <div class="post-meta d-flex mb-30">
+                                <p class="post-author">By<a href="#"> Admin</a></p>
+                                <p class="tags">in<a href="#"> Events</a></p>
+                                <p class="tags"><a href="#">2 Comments</a></p>
+                            </div>
+                            <!-- Post Excerpt -->
+                            <p> <%=gig.description%> </p>
                         </div>
-                        <!-- Post Excerpt -->
-                        <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
                     </div>
-                </div>
+                <% end %>
 
                 <!-- Single Post Start -->
                 <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
@@ -66,35 +68,7 @@
                         <!-- Post Excerpt -->
                         <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
                     </div>
-                </div>
-
-                <!-- Single Post Start -->
-                <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Post Thumb -->
-                    <div class="blog-post-thumb mt-30">
-                    <br><br>
-                        <a href="#"><img src="img/bg-img/blog3.jpg" alt=""></a>
-                        <!-- Post Date -->
-                        <div class="post-date">
-                            <span>15</span>
-                            <span>June ‘18</span>
-                        </div>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Post Title -->
-                        <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
-                        <!-- Post Meta -->
-                        <div class="post-meta d-flex mb-30">
-                            <p class="post-author">By<a href="#"> Admin</a></p>
-                            <p class="tags">in<a href="#"> Events</a></p>
-                            <p class="tags"><a href="#">2 Comments</a></p>
-                        </div>
-                        <!-- Post Excerpt -->
-                        <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
-                    </div>
-                </div>
+                </div>   
 
                 <!-- Pagination -->
                 <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
@@ -106,6 +80,7 @@
                         </ul>
                     </nav>
                 </div>
+
             </div>
 
             <div class="col-12 col-lg-3">
