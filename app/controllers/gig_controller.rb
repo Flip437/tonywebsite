@@ -12,7 +12,7 @@ class GigController < ApplicationController
   def create
     puts "PARAMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
     puts params
-
+# essayer avec un form for au lieu de for with
     @gig = Gig.create(
       date: params[:date],
       title: params[:title],
@@ -25,7 +25,7 @@ class GigController < ApplicationController
 
     if @gig
       #flash[:success] = "Livre ajouté à votre bibliothèque:)"
-      redirect_to root_path
+      redirect_to new_gig_path
     else
       #flash[:error] = "Erreur d'ajout du livre :("
       redirect_to root_path
