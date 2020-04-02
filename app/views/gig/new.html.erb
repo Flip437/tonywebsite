@@ -1,0 +1,77 @@
+<!-- ##### Breadcumb Area Start ##### -->
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'breadcumb3.jpg' %>);">
+    <div class="bradcumbContent">
+        <p>En savoir plus sur moi</p>
+        <h2>Biographie</h2>
+    </div>
+</section>
+<!-- ##### Breadcumb Area End ##### -->
+
+<br><br><br><br>
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-area section-padding-0-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <p>See what’s new</p>
+                    <h2>Get In Touch</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Contact Form Area -->
+                <div class="contact-form-area">
+                    <%= form_with(url: gig_index_path, method: "post") do |f| %>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <%= f.text_field :date, class:"form-control", placeholder:"Date" %>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <%= f.text_field :title, class:"form-control", placeholder:"Titre de l'évènement" %>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <%= f.text_field :place, class:"form-control", placeholder:"Lieu de réception" %>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <%= f.text_field :streetnumb, class:"form-control", placeholder:"N°" %>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <%= f.text_field :streettype, class:"form-control", placeholder:"Voie" %>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                            <div class="form-group">
+                                <%= f.text_field :streetname, class:"form-control", placeholder:"Nom dela voie" %>
+                            </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <%= f.text_area :description, class:"form-control", placeholder:"Description" %>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                                    Send <i class="fa fa-angle-double-right"></i>
+                                  <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Contact Area End ##### -->
