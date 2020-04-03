@@ -2,9 +2,8 @@ class CreateGigs < ActiveRecord::Migration[5.2]
   def change
     create_table :gigs do |t|
 
-      t.integer :day
-      t.integer :month
-      t.integer :year
+      t.date :date
+      t.time :time
       t.string :title
       t.text :description
       t.string :place

@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 2020_04_02_084754) do
   enable_extension "plpgsql"
 
   create_table "gigs", force: :cascade do |t|
-    t.integer "day"
-    t.integer "month"
-    t.integer "year"
+    t.date "date"
+    t.time "time"
     t.string "title"
     t.text "description"
     t.string "place"

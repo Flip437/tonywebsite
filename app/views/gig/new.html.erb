@@ -27,19 +27,14 @@
                 <div class="contact-form-area">
                     <%= form_for @gig, url: gig_index_path, method: "post" do |f| %>
                         <div class="row">
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= f.number_field :day, class:"form-control", placeholder:"Jour" %>
+                                    <%= f.date_field :date, class:"form-control", placeholder:"date" %>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= f.number_field :month, class:"form-control", placeholder:"Mois" %>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <%= f.number_field :year, class:"form-control", placeholder:"Année" %>
+                                    <%= f.time_field :time, class:"form-control", placeholder:"time" %>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">

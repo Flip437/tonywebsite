@@ -9,10 +9,19 @@ class GigController < ApplicationController
   end
 
   def create
+    puts "PARAMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
+    puts params[:gig][:date].to_date
+    puts params[:gig][:date].to_date.class
+    puts params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date.month
+    puts params[:gig][:time]
+    puts params[:gig][:time].to_time.class
+    puts params[:gig][:time].to_time.hour
+    puts params[:gig][:time].to_time.min
+  
+
     @gig = Gig.create(
-      day: params[:gig][:day].to_i,
-      month: params[:gig][:month].to_i,
-      year: params[:gig][:year].to_i,
+      date: params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date,
+      time: params[:gig][:time],
       title: params[:gig][:title],
       description: params[:gig][:description],
       place: params[:gig][:place],
