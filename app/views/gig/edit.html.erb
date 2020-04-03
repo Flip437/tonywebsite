@@ -1,8 +1,8 @@
 <!-- ##### Breadcumb Area Start ##### -->
 <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'breadcumb3.jpg' %>);">
     <div class="bradcumbContent">
-        <p>Retrouvez moi en concert</p>
-        <h2>Agenda</h2>
+        <p>Modifier</p>
+        <h2>Evènement</h2>
     </div>
 </section>
 <!-- ##### Breadcumb Area End ##### -->
@@ -13,14 +13,7 @@
         <div class="row">  
         
             <div class="col-12 col-lg-4">
-
                 <div class="contact-content mb-100">
-
-                    <!-- Title -->
-                    <div class="contact-title mb-50">
-                        <h5> <%=@gig.title%> </h5>
-                    </div>
-
                     <%= form_for @gig, method: "patch" do |f| %>
                         <!-- Single Contact Info -->
                         <div class="single-contact-info d-flex align-items-center">
@@ -69,19 +62,7 @@
                             </div>                                                        
                             <%= f.text_field :mapurl, class:"form-control", id:"name", placeholder:"url de le map"%>
                         </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="col-12 text-center">
-                                <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
-                                    Sauvegarder <i class="fa fa-angle-double-right"></i>
-                                <% end %>
-                            </div>
-                        </div>
-                    <% end %>
-
                 </div>
-
             </div>
 
             <div class="col-12 col-lg-8">
@@ -92,6 +73,38 @@
             </div>
 
         </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <div class="contact-content mb-100">
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <span class="icon-edit  "></span>
+                        </div>                                                        
+                        <%= f.text_area :description, class:"form-control", id:"name", placeholder:"Desciption de l'évènement"%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">  
+            <div class="col-12 col-lg-12">
+                <div class="contact-content mb-100">
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="col-12 text-center">
+                            <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                                Sauvegarder <i class="fa fa-angle-double-right"></i>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% end %>
+        
     </div>
 </section>
 <!-- ##### Contact Area End ##### -->
