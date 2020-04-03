@@ -7,9 +7,11 @@ class CreateGigs < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.string :place
-      t.string :streetnumb
-      t.string :streettype
-      t.string :streetname
+      t.string :adress
+      t.string :mapurl
+
+      # Each field will be prefixed by 'address_'
+			#t.address :address
 
       t.string :admin
       t.string :event

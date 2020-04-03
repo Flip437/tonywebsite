@@ -1,4 +1,3 @@
-console.log("IN GALLERY JS")
 $(document).ready(function(){
   $(".fancybox").fancybox({
         openEffect: "none",

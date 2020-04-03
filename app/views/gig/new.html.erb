@@ -29,12 +29,12 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= f.date_field :date, class:"form-control", placeholder:"date" %>
+                                    <%= f.date_field :date, class:"form-control", placeholder:"Date" %>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= f.time_field :time, class:"form-control", placeholder:"time" %>
+                                    <%= f.time_field :time, class:"form-control", placeholder:"Heure" %>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
@@ -49,24 +49,15 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= f.text_field :streetnumb, class:"form-control", placeholder:"N°" %>
+                                    <%= f.text_field :adress, class:"form-control", placeholder:"Adresse" %>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= f.text_field :streettype, class:"form-control", placeholder:"Voie" %>
+                                    <%= f.text_field :mapurl, class:"form-control", placeholder:"Url de la map" %>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <%= f.text_field :streetname, class:"form-control", placeholder:"Nom dela voie" %>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <%= f.text_area :description, class:"form-control", placeholder:"Description" %>
-                                </div>
-                            </div>
+
                             <div class="col-12 text-center">
                                 <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
                                     Send <i class="fa fa-angle-double-right"></i>

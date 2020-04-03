@@ -9,25 +9,14 @@ class GigController < ApplicationController
   end
 
   def create
-    puts "PARAMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
-    puts params[:gig][:date].to_date
-    puts params[:gig][:date].to_date.class
-    puts params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date.month
-    puts params[:gig][:time]
-    puts params[:gig][:time].to_time.class
-    puts params[:gig][:time].to_time.hour
-    puts params[:gig][:time].to_time.min
-  
-
-    @gig = Gig.create(
+     @gig = Gig.create(
       date: params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date,
       time: params[:gig][:time],
       title: params[:gig][:title],
       description: params[:gig][:description],
       place: params[:gig][:place],
-      streetnumb: params[:gig][:streetnumb],
-      streettype: params[:gig][:streettype],
-      streetname: params[:gig][:streetname]
+      adress: params[:gig][:adress],
+      mapurl: params[:gig][:mapurl].html_safe, #<%=raw @str > // <%== @str > // simple_format(@str)
     )
     if @gig
       #flash[:success] = "Livre ajouté à votre bibliothèque:)"
@@ -44,6 +33,28 @@ class GigController < ApplicationController
 
   def edit
     @gig = Gig.find(params[:id])
+  end
+
+  def update
+    @gig = Gig.find(params[:id])
+
+    @gig.date = params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date
+    @gig.time = params[:gig][:time]
+    @gig.title = params[:gig][:title]
+    @gig.description = params[:gig][:description]
+    @gig.place = params[:gig][:place]
+    @gig.adress = params[:gig][:adress]
+    @gig.mapurl = params[:gig][:mapurl].html_safe
+
+    @gig.save
+
+    redirect_to gig_path(@gig)
+  end
+
+  def destroy
+    @gig = Gig.find(params[:id])
+    @gig.destroy
+    redirect_to gig_index_path
   end
 
 end

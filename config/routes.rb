@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  resources :gig, only: [:index, :new, :create, :show, :edit]
+  resources :gig
 
 end
