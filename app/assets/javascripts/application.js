@@ -18,3 +18,4 @@
 //= require plugins
 //= require active
 //= require gallery
+//= require social-share-button
