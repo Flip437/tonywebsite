@@ -28,14 +28,11 @@
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                        <p> ID : <%= gig.id %> </p>
                             <!-- Post Title -->
                             <%=link_to gig.title, gig_path(gig), class:"post-title"%>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
+                                <p> <%= link_to "Billets", "#{gig.ticketurl}", :target => "_blank" %> </p> 
                             </div>
                             <!-- Post Excerpt -->
                             <p> <%=gig.description%> </p>

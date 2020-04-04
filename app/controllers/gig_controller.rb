@@ -17,6 +17,7 @@ class GigController < ApplicationController
       place: params[:gig][:place],
       adress: params[:gig][:adress],
       mapurl: params[:gig][:mapurl].html_safe, #<%=raw @str > // <%== @str > // simple_format(@str)
+      ticketurl: params[:gig][:ticketurl].html_safe
     )
     if @gig
       #flash[:success] = "Livre ajouté à votre bibliothèque:)"
@@ -45,6 +46,7 @@ class GigController < ApplicationController
     @gig.place = params[:gig][:place]
     @gig.adress = params[:gig][:adress]
     @gig.mapurl = params[:gig][:mapurl].html_safe
+    @gig.ticketurl = params[:gig][:ticketurl].html_safe 
 
     @gig.save
 
