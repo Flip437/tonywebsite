@@ -28,29 +28,47 @@
                     <div class="tab-content mb-100" id="myTabContent">
                         <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
                             <div class="oneMusic-tab-content">
+
                                 <!-- single accordian area -->
                                 <div class="panel single-accordion">
-                                    <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Mauris gravida neque augue, euismod ultricies dui sodales ut
+                                    <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Ajouter un évènement
                                             <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                             <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                         </a>
                                     </h6>
                                     <div id="collapseOne" class="accordion-content collapse show">
-                                        <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                                        <%= render 'admin/newform' %>
                                     </div>
                                 </div>
 
                                 <!-- single accordian area -->
                                 <div class="panel single-accordion">
+
                                     <h6>
-                                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Pellentesque sit amet velit a libero viverra porta non eu justo
+                                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Liste de mes évènements
                                                 <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                                 <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                                 </a>
                                     </h6>
+
                                     <div id="collapseTwo" class="accordion-content collapse">
-                                        <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                                        <div class="col-12">                               
+                                            <!-- Single Web Icon -->
+                                            <table class="col-12 mb-30 mt-30">
+                                            <% @gigs.each do |gig| %>
+                                                <div class="single-blog-post wow fadeInUp" data-wow-delay="100ms">
+                                                    <tr style="border: grey solid 1px;">
+                                                        <td> <%= link_to gig.title, gig_path(gig), class:"post-title" %> </td>
+                                                        <td> <%= gig.date %>  </td>
+                                                        <td> <%= gig.time %>  </td>
+                                                        <td> <%= link_to 'Supprimer',  gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement?' } %> </td>
+                                                    </tr>
+                                                </div>
+                                            <% end %>  
+                                            </table>                                 
+                                        </div>                                    
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -104,6 +122,18 @@
                                 </a>
                         </h6>
                         <div id="collapseThree" class="accordion-content collapse">
+                            <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
+                        </div>
+                    </div>
+                    <!-- single accordian area -->
+                    <div class="panel single-accordion">
+                        <h6>
+                            <a role="button" aria-expanded="true" aria-controls="collapseFour" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">Quisque fringilla orci lacus, ut vestibulum nisi interdum in
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                </a>
+                        </h6>
+                        <div id="collapseFour" class="accordion-content collapse">
                             <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante.</p>
                         </div>
                     </div>

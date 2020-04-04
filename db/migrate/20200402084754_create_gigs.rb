@@ -4,12 +4,12 @@ class CreateGigs < ActiveRecord::Migration[5.2]
 
       t.date :date
       t.time :time
-      t.string :title, default: "Titre de l'évènement"
+      t.string :title
       t.text :description
-      t.string :place, default: "Lieu"
-      t.string :adress, default: "Adresse"
-      t.string :mapurl, default: "Url de la map"
-      t.string :ticketurl,  default: "Url de vente des billets"
+      t.string :place
+      t.string :adress
+      t.string :mapurl
+      t.string :ticketurl
 
       # Each field will be prefixed by 'address_'
 			#t.address :address

@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
 
     def index
+        @gig = Gig.new
         @gigs = Gig.all
     end
     

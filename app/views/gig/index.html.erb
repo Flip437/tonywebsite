@@ -29,7 +29,7 @@
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <!-- Post Title -->
-                            <%=link_to gig.title, gig_path(gig), class:"post-title"%>
+                            <%= link_to gig.title, gig_path(gig), class:"post-title" %>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
                                 <p> <%= link_to "Billets", "#{gig.ticketurl}", :target => "_blank" %> </p> 
