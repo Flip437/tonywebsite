@@ -28,7 +28,7 @@ template used:
 https://colorlib.com/wp/template/onemusic/
 https://bootsnipp.com/snippets/aMGnk
 
-vide_tag
+video_tag
 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
     <%= link_to video_tag('pexel.mp4', class: 'zoom img-fluid'), asset_path("pexel.mp4"), class: 'fancybox', rel: 'ligthbox'%>
 </div>
