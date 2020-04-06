@@ -72,3 +72,4 @@ gem 'table_print', '~> 1.5', '>= 1.5.6'
 gem 'better_errors', '~> 2.6'
 #gem 'jt-rails-address', '~> 1.0' // https://github.com/jonathantribouharet/jt-rails-address
 gem 'social-share-button', '~> 1.2', '>= 1.2.1'
+gem 'devise', '~> 4.2'
