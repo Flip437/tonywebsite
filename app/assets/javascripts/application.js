@@ -18,4 +18,5 @@
 //= require plugins
 //= require active
 //= require gallery
+//= require jquery.fancybox.min
 //= require social-share-button
