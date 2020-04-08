@@ -15,9 +15,8 @@
 
     <!-- Favicon -->
     <%= favicon_link_tag 'favicon.ico' %>
- 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
  
   </head>
 
@@ -28,11 +27,15 @@
 
     <%= yield %>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <!-- ##### Footer Area Start ##### -->
     <%= render 'layouts/indexfooter' %>
     <!-- ##### Footer Area Start ##### -->
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
   </body>
 </html>
