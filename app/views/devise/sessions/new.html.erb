@@ -7,6 +7,11 @@
 </section>
 <!-- ##### Breadcumb Area End ##### -->
 
+<!-- ##### Alert Area Start ##### -->
+<br><br><br><br>
+<div class="alert alert-warning"> <%= notice %> </div>
+<div class="alert alert-danger"> <%= alert %> </div>
+<!-- ##### Alert Area End ##### -->
 
 <!-- ##### Login Area Start ##### -->
 <section class="login-area section-padding-100">
@@ -20,26 +25,26 @@
                       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                             
                         <div class="form-group">
-                                <%= f.label :email %><br />
-                                <%= f.email_field :email, class:"form-control", placeholder:"Entrer votre adresse mail", autocomplete:"email" ,autofocus: true %>
-                                <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>Toutes vos données de connexion resterons confidentielles</small>
-                            </div>
+                          <%= f.label :email %><br />
+                          <%= f.email_field :email, class:"form-control", placeholder:"Entrer votre adresse mail", autocomplete:"email" ,autofocus: true %>
+                          <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>Toutes vos données de connexion resterons confidentielles</small>
+                        </div>
 
-                            <div class="form-group">
-                                <%= f.label :password %><br />
-                                <%= f.password_field :password, class:"form-control", id:"exampleInputPassword1", placeholder:"Entrer votre mot de passe", autocomplete:"current-password" %>
-                            </div>
+                        <div class="form-group">
+                          <%= f.label :password %><br />
+                          <%= f.password_field :password, class:"form-control", id:"exampleInputPassword1", placeholder:"Entrer votre mot de passe", autocomplete:"current-password" %>
+                        </div>
 
-                            <% if devise_mapping.rememberable? %>
-                              <div class="field">
-                                <%= f.check_box :remember_me %>
-                                <%= f.label :remember_me %>
-                              </div>
-                            <% end %>
+                        <% if devise_mapping.rememberable? %>
+                          <div class="field">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me %>
+                          </div>
+                        <% end %>
 
-                            <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
-                              Se connecter <i class="fa fa-angle-double-right"></i>
-                            <% end %>
+                        <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                          Se connecter <i class="fa fa-angle-double-right"></i>
+                        <% end %>
 
                       <% end %>
                     <%= render "devise/shared/links" %>
