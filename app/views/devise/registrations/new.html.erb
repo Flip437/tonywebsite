@@ -15,10 +15,13 @@
             <div class="col-12 col-lg-8">
                 <div class="login-content">
                     <h3>Inscrivez vous</h3>
+                    <!-- ##### Alert Area Start ##### -->
+                    <%= devise_error_messages! %>
+                    <%= render 'layouts/messages' %>
+                    <!-- ##### Alert Area End ##### -->
                     <!-- Login Form -->
                     <div class="login-form">
                     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                      <%= render "devise/shared/error_messages", resource: resource %>
                         <div class="form-group">
                           <%= f.label :email %><br />
                           <%= f.email_field :email, class:"form-control", placeholder:"Entrer votre adresse mail", autocomplete:"email" ,autofocus: true %>

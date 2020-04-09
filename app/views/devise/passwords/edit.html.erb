@@ -15,6 +15,10 @@
             <div class="col-12 col-lg-8">
                 <div class="login-content">
                     <h3>Mot de passe oublié ?</h3>
+                    <!-- ##### Alert Area Start ##### -->
+                    <%= devise_error_messages! %>
+                    <%= render 'layouts/messages' %>
+                    <!-- ##### Alert Area End ##### -->
                     <!-- Login Form -->
                     <div class="login-form">
                       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
