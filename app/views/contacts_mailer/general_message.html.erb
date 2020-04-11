@@ -1,8 +1,8 @@
 <!-- ##### Breadcumb Area Start ##### -->
-<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'breadcumb3.jpg' %>);">
     <div class="bradcumbContent">
-        <p>See what’s new</p>
-        <h2>Events</h2>
+        <p>Vous avez reçu un nouveau message de </p>
+        <h2><%= @contact.name %></h2>
     </div>
 </section>
 <!-- ##### Breadcumb Area End ##### -->
