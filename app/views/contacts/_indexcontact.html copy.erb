@@ -13,16 +13,30 @@
             <div class="col-12">
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
-                    <form action="#" method="post">
+                    <%= form_for(@contact) do |f| %>
+                        <% if @contact.errors.any? %>
+                            <div id="error_explanation">
+                                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>  
+                                <ul>
+                                    <% @contact.errors.full_messages.each do |msg| %>
+                                    <li><%= msg %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
+
+
                         <div class="row">
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="100ms">
-                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                    <%= f.label :name %><br />
+                                    <%= f.text_field :name, class:'form-control', placeholer:"Votre nom" %>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="200ms">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <%= f.label :email %><br />
+                                    <%= f.text_field :email, class:'form-contrrol', placeholder:"Votre email" %>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -32,16 +46,21 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    <%= f.label :message %><br />
+                                    <%= f.text_area :message, class:'form-control', placeholder:'Votre message'%>
                                 </div>
                             </div>
                             <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
+                                <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                                    Envoyer <i class="fa fa-angle-double-right"></i>
+                                <% end %>
                             </div>
                         </div>
-                    </form>
+                    <% end %>
                 </div>
             </div>
         </div>
+
+
     </div>
 </section>
