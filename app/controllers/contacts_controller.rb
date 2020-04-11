@@ -1,23 +1,26 @@
 class ContactsController < ApplicationController
     puts "IN CONTACT CONTROLERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
-    def new
-        @contact = Contact.new
-    end
 
-    def create
-        @contact = Contact.new(params[:contact])
-        puts "CONTACTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
-        puts @contact
-        
-        if @contact.save
-          ContactsMailer.general_message(@contact).deliver
-          render :thanks
-        else
-          render :new
-        end
-    end
-    
-    def thanks
-    end
+  def create
+      @contact = Contact.new(contact_params)
+      puts "CONTACTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+      puts @contact
+      
+      if @contact.save
+        ContactsMailer.general_message(@contact).deliver
+        render :thanks
+      else
+        render :new
+      end
+  end
+  
+  def thanks
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :subject, :message)
+  end
 
 end

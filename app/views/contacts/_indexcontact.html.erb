@@ -1,29 +1,63 @@
-<%= form_for @contact, url:new_contact_path do |f| %>
-    <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h3><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-  
-        <ul>
-        <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+<section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(<%= asset_path 'bg-4.jpg' %>);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                    <p>Restons en contact</p>
+                    <h2>Ecrivez moi</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Contact Form Area -->
+                <div class="contact-form-area">
+                    <%= form_for(@contact) do |f| %>
+                        <% if @contact.errors.any? %>
+                            <div id="error_explanation">
+                                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>  
+                                <ul>
+                                    <% @contact.errors.full_messages.each do |msg| %>
+                                    <li><%= msg %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
+
+
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group wow fadeInUp" data-wow-delay="100ms">
+                                    <%= f.text_field :name, class:'form-control', placeholder:"Votre nom" %>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group wow fadeInUp" data-wow-delay="200ms">
+                                    <%= f.text_field :email, class:'form-control', placeholder:"Votre email" %>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group wow fadeInUp" data-wow-delay="300ms">
+                                    <%= f.text_field :subject, class:'form-control', placeholder:"Object" %>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                    <%= f.text_area :message, class:'form-control', placeholder:'Votre message'%>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                                <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                                    Envoyer <i class="fa fa-angle-double-right"></i>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :message %><br />
-      <%= f.text_area :message %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Send"%>
-    </div>
-  <% end %>
+</section>
