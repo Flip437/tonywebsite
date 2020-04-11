@@ -94,5 +94,7 @@ Rails.application.configure do
 
   config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif *.ico]
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "https://staging-anthonysiteweb.herokuapp.com" }
 
 end

@@ -32,7 +32,7 @@
                                 <% if current_admin %>
                                     <li><a href="#">Profil / Déconnexion</a>
                                         <ul class="dropdown">
-                                            <li> <%= link_to "Profil", admin_path(current_admin.id) %> </li>
+                                            <li> <%= link_to "Profil", edit_admin_registration_path(current_admin.id) %> </li>
                                             <li> <%= link_to "Déconnexion", destroy_admin_session_path, method: :delete %> </li>
                                         </ul>
                                     </li>
