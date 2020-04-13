@@ -1,16 +1,19 @@
 class ContactsController < ApplicationController
-    puts "IN CONTACT CONTROLERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
 
   def create
       @contact = Contact.new(contact_params)
-      puts "CONTACTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
-      puts @contact
       
       if @contact.save
         ContactsMailer.general_message(@contact).deliver
-        render :thanks
+        flash[:success] = "Votre message a bien été envoyé, j'y répondrai dès que possible:)"
+        puts "FLASHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+        puts flash
+        redirect_to root_path
       else
-        render :new
+        flash[:alert] = "Une erreur s'est produite :( "
+        puts "FLASHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+        
+        redirect_to root_path
       end
   end
   
