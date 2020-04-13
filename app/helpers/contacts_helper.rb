@@ -1,7 +1,6 @@
 module ContactsHelper
 
     def color(level)
-        puts "IN COLOR FUNCTION"
         case level
             when 'notice' then "alert alert-info"
             when 'success' then "alert alert-success"
