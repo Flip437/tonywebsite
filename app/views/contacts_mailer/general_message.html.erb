@@ -1,39 +1,13 @@
-<!-- ##### Breadcumb Area Start ##### -->
-<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'breadcumb3.jpg' %>);">
-    <div class="bradcumbContent">
-        <p>Vous avez reçu un nouveau message de </p>
-        <h2><%= @contact.name %></h2>
-    </div>
-</section>
-<!-- ##### Breadcumb Area End ##### -->
+<h2>Vous avez reçu un nouveau message de </h2>
+<h3><%= @contact.name %></h3>
 
-<!-- ##### Newsletter & Testimonials Area Start ##### -->
-<section class="newsletter-testimonials-area">
-    <div class="container">
-        <div class="row">
-              <!-- Testimonials Area -->
-                <div class="col-1 col-lg-6">
-                    <div class="testimonials-area mb-100 bg-img bg-overlay" style="background-image: url(img/bg-img/bg-3.jpg);">
-                        <div class="section-heading white text-left mb-50">
-                            <h2>Message</h2>
-                        </div>
-                        <!-- Testimonial Slide -->
-                        <div class="testimonials-slide owl-carousel">
-                            <!-- Single Slide -->
-                            <div class="single-slide">
-                                <p> <%= @contact.message %> </p>
-                                <div class="testimonial-info d-flex align-items-center">
-                                    <div class="testimonial-thumb">
-                                        <%= image_tag 'avatar.png' %>
-                                    </div>
-                                    <p> <%= @contact.name %> </p>
-                                    <p> <%= @contact.email %> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-        </div>
-    </div>
-</section>
-<!-- ##### Newsletter & Testimonials Area End ##### -->
+<br><br>
+
+<h2>Message</h2>
+<p> <%= @contact.message %> </p>
+
+<br><br>
+
+<h2>Blabla</h2>
+<p> <%= @contact.name %> </p>
+<p> <%= @contact.email %> </p>

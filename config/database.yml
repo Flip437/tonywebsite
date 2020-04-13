@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: tonywebsite_production
-  username: tonywebsite
+  username: flip
   password: <%= ENV['TONYWEBSITE_DATABASE_PASSWORD'] %>
