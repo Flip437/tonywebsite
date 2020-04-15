@@ -12,15 +12,25 @@ class CategoryController < ApplicationController
     end
     
     def create
-        @category = Category.create(name: params[:category][:name])
-       if @category
-         #flash[:success] = "Vous avez bien ajouté une date à votre agenda :)"
-         redirect_to new_category_path
-       else
-         #flash[:error] = "Une erreur s'est produite :("
-         redirect_to root_path
-       end
-     end
+      @category = Category.create(name: params[:category][:name])
+      if @category
+
+        respond_to do |format|
+          format.html do 
+            flash[:success] = "Vous avez bien ajouté une catégorie :)"
+            redirect_to admin_index_path
+          end
+          format.js { }
+        end
+      
+      else
+        flash[:error] = "Une erreur s'est produite"
+        redirect_to root_path 
+      end
+    end
+
+
+
 
     def show
     end

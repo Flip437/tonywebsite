@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   resources :gig
   resources :admin
   resources :contacts
-  resources :category do
-    resources :repertoires
-  end
+  resources :category
+  resources :repertoire
 
 end
