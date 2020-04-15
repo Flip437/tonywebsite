@@ -13,19 +13,19 @@
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Titre</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Heure</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Compositeur</th>
+                    <th scope="col">Rôle</th>
+                    <th scope="col">Catégorie</th>
                 </tr>
             </thead>
             <tbody>
-            <% @gigs.each do |gig| %>
+            <% @repertoires.each do |rep| %>
                 <tr>
-                    <th scope="row"> <%= gig.id %> </th>
-                    <td> <%= link_to gig.title, gig_path(gig), class:"post-title" %> </td>
-                    <td> <%= gig.date %> </td>
-                    <td> <%= gig.time %> </td>
-                    <td> <%= link_to 'Supprimer',  gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement?' } %> </td>
+                    <th scope="row"> <%= rep.id %> </th>
+                    <td> <%= link_to rep.title, repertoire_path(rep), class:"post-title" %> </td>
+                    <td> <%= rep.composer %> </td>
+                    <td> <%= rep.role %> </td>
+                    <td> <%= link_to 'Supprimer',  rep,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette oeuvre?' } %> </td>
                 </tr>
                 <% end %>
             </tbody>
