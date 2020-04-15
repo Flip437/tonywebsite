@@ -33,3 +33,6 @@ video_tag
     <%= link_to video_tag('pexel.mp4', class: 'zoom img-fluid'), asset_path("pexel.mp4"), class: 'fancybox', rel: 'ligthbox'%>
 </div>
 
+
+         <%= form_for @repertoire, url: repertoire_index_path, method: "post" do |f| %>
+
