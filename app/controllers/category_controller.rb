@@ -1,4 +1,4 @@
-class RepertoireController < ApplicationController
+class CategoryController < ApplicationController
 
     def index
         @categories = Category.all
@@ -12,14 +12,10 @@ class RepertoireController < ApplicationController
     end
     
     def create
-        @repertoire = Repertoire.create(
-         title: params[:repertoire][:title],
-         composer: params[:repertoire][:composer],
-         role: params[:repertoire][:role]
-       )
-       if @repertoire
+        @category = Category.create(name: params[:category][:name])
+       if @category
          #flash[:success] = "Vous avez bien ajouté une date à votre agenda :)"
-         redirect_to new_repertoire_path
+         redirect_to new_category_path
        else
          #flash[:error] = "Une erreur s'est produite :("
          redirect_to root_path

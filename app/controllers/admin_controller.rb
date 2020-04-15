@@ -4,10 +4,14 @@ class AdminController < ApplicationController
     def index
         @gig = Gig.new
         @gigs = Gig.all
+        @repertoire = Repertoire.new
+        @category = Category.new
     end
     
     def new
         @gig = Gig.new
+        @repertoire = Repertoire.new
+        @category = Category.new
     end
     
     def create
