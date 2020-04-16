@@ -7,6 +7,7 @@ class AdminController < ApplicationController
         @repertoires = Repertoire.all
         @repertoire = Repertoire.new
         @category = Category.new
+        @categories = Category.all
     end
     
     def new
