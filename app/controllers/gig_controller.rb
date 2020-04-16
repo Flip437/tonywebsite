@@ -20,10 +20,10 @@ class GigController < ApplicationController
       ticketurl: params[:gig][:ticketurl].html_safe
     )
     if @gig
-      #flash[:success] = "Vous avez bien ajouté une date à votre agenda :)"
+      flash[:success] = "Vous avez bien ajouté une date à votre agenda :)"
       redirect_to new_gig_path
     else
-      #flash[:error] = "Une erreur s'est produite :("
+      flash[:error] = "Une erreur s'est produite :("
       redirect_to root_path
     end
   end
