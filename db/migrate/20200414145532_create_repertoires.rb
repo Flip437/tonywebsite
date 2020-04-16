@@ -4,6 +4,7 @@ class CreateRepertoires < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :composer
       t.string :role
+      t.string :newcategory
       t.belongs_to :category, index: true
 
       t.timestamps

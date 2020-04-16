@@ -42,8 +42,18 @@
                                 <div class="icon mr-30">
                                     <span class="icon-microphone"></span>
                                 </div>                                                        
-                                <%= f.collection_select :category, Category.all, :id,  :name, class:"form_control", include_blank: true %>
+                                <%= select("repertoire", "category_id", Category.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, {class: "form-control"}) %>
                             </div>
+
+                            <!-- Single Contact Info -->
+                            <div class="single-contact-info d-flex align-items-center">
+                                <div class="icon mr-30">
+                                    <span class="icon-favorites"></span>
+                                </div>                                                        
+                                <%= f.text_field :newcategory, class:"form-control", id:"name", placeholder:"Nouvelle catégorie d'oeuvre" %>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -63,7 +73,8 @@
                     </div>
                 </div>
             <% end %>
-
+            
+            <!-- ##### New category Area Start ##### -->
             <%= form_for @category, url: category_index_path, method: "post" do |f| %>
                 <div class="row">            
                     <div class="col-12 col-lg-12">
@@ -96,6 +107,7 @@
                     </div>
                 </div>
             <% end %>
+            <!-- ##### New category Area End ##### -->
             </div>
         </section>
         <!-- ##### Contact Area End ##### -->
