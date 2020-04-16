@@ -1,6 +1,6 @@
 <div class="panel single-accordion">
 <h6>
-    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Liste de mes évènements
+    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Mon répèrtoire
             <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
             <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
             </a>
@@ -16,6 +16,9 @@
                     <th scope="col">Compositeur</th>
                     <th scope="col">Rôle</th>
                     <th scope="col">Catégorie</th>
+                    <th scope="col">Afficher</th>
+                    <th scope="col">Edition</th>
+                    <th scope="col">Supression</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +28,10 @@
                     <td> <%= link_to rep.title, repertoire_path(rep), class:"post-title" %> </td>
                     <td> <%= rep.composer %> </td>
                     <td> <%= rep.role %> </td>
-                    <td> <%= link_to 'Supprimer',  rep,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette oeuvre?' } %> </td>
+                    <td> <%= rep.category.name %> </td>
+                    <td> <%= link_to 'Afficher', repertoire_path(rep) %> </td>
+                    <td> <%= link_to 'Editer', edit_repertoire_path(rep) %> </td>
+                    <td> <%= link_to 'Supprimer', rep, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette oeuvre?' } %> </td>
                 </tr>
                 <% end %>
             </tbody>

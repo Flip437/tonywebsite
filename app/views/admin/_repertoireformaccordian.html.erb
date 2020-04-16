@@ -40,7 +40,7 @@
                             <!-- Single Contact Info -->
                             <div class="single-contact-info d-flex align-items-center">
                                 <div class="icon mr-30">
-                                    <span class="icon-microphone"></span>
+                                    <span class="icon-favorites"></span>
                                 </div>                                                        
                                 <%= select("repertoire", "category_id", Category.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, {class: "form-control"}) %>
                             </div>
@@ -73,41 +73,6 @@
                     </div>
                 </div>
             <% end %>
-            
-            <!-- ##### New category Area Start ##### -->
-            <%= form_for @category, url: category_index_path, method: "post" do |f| %>
-                <div class="row">            
-                    <div class="col-12 col-lg-12">
-                        <div class="contact-content mb-100">
-
-                            <!-- Single Contact Info -->
-                            <div class="single-contact-info d-flex align-items-center">
-                                <div class="icon mr-30">
-                                    <span class="icon-microphone"></span>
-                                </div>
-                                <%= f.text_field :name, class:"form-control", id:"name", placeholder:"Nom de la catégorie" %>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">  
-                    <div class="col-12 col-lg-12">
-                        <div class="contact-content mb-100">
-                            <!-- Single Contact Info -->
-                            <div class="single-contact-info d-flex align-items-center">
-                                <div class="col-12 text-center">
-                                    <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
-                                        Enregistrer la nouvelle catégorie <i class="fa fa-angle-double-right"></i>
-                                    <% end %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-            <!-- ##### New category Area End ##### -->
             </div>
         </section>
         <!-- ##### Contact Area End ##### -->
