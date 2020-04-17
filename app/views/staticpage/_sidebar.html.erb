@@ -1,0 +1,49 @@
+<div class="col-12 col-lg-3">
+    <div class="blog-sidebar-area">
+
+        <!-- Widget Area -->
+        <div class="single-widget-area mb-30">
+            <div class="widget-title">
+                <h5>SiteMap</h5>
+            </div>
+            <div class="widget-content">
+                <ul>
+                    <li> <%= link_to "Biographie", staticpage_bio_path %> </li>
+                    <li> <%= link_to "Répertoire", repertoire_index_path %> </li>
+                    <li> <%= link_to "Gallerie", staticpage_gallery_path %> </li>
+                    <li> <%= link_to "Agenda", gig_index_path %> </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Widget Area -->
+        <div class="single-widget-area mb-30">
+            <div class="widget-title">
+                <h5>Evènements</h5>
+            </div>
+            <div class="widget-content">
+                <ul>
+                <% @gigs.each do |gig| %>
+                    <li><%= link_to gig.title, gig_path(gig), class:"post-title" %> </li>
+                <% end %>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Widget Area -->
+        <div class="single-widget-area mb-30">
+            <%= link_to image_tag('Tristan Christophe Belletante.jpg'), staticpage_gallery_path %>
+        </div>
+
+        <!-- Widget Area -->
+        <div class="single-widget-area mb-30">
+            <%= link_to image_tag('mariage_scene.jpg'), staticpage_gallery_path %>
+        </div>
+
+        <!-- Widget Area -->
+        <div class="single-widget-area mb-30">
+            <%= link_to image_tag('Le mariage forcé (5).jpg'), staticpage_gallery_path %>
+        </div>
+
+    </div>
+</div>

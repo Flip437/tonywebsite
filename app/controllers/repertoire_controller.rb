@@ -3,6 +3,7 @@ class RepertoireController < ApplicationController
   def index
     @categories = Category.all
     @repertoires = Repertoire.all
+    @gigs = Gig.all
   end
 
   def create
