@@ -78,3 +78,5 @@ gem 'devise', '~> 4.2'
 gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 gem 'premailer-rails'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
+gem 'meta-tags'
+gem 'sitemap_generator' 
