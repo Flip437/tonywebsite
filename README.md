@@ -36,3 +36,9 @@ video_tag
 
          <%= form_for @repertoire, url: repertoire_index_path, method: "post" do |f| %>
 
+
+CDN for fancy box
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
