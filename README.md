@@ -44,3 +44,4 @@ CDN for fancy box
 
 rake assets:clobber
 RAILS_ENV=production rake assets:precompile
+#config.assets.compile = false
