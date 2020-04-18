@@ -42,3 +42,7 @@ CDN for fancy box
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 
+
+
+
+! Warning: Your slug size (310 MB) exceeds our soft limit (300 MB) which may affect boot time.
