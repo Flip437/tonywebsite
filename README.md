@@ -42,3 +42,5 @@ CDN for fancy box
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 
+rake assets:clobber
+RAILS_ENV=production rake assets:precompile
