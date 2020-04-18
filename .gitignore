@@ -28,3 +28,7 @@
 
 # Ignore dotenv file
 /.env
+
+/pk-APKAJILM4GDEZAPA33NQ.pem
+/rootkey.csv
+/rsa-APKAJILM4GDEZAPA33NQ.pem
