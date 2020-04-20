@@ -19,3 +19,4 @@
 //= require active
 //= require gallery
 //= require social-share-button
+//= require trix
