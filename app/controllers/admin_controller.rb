@@ -8,6 +8,8 @@ class AdminController < ApplicationController
         @repertoire = Repertoire.new
         @category = Category.new
         @categories = Category.all
+        @bio = Bio.new
+        @bios = Bio.all
     end
     
     def new

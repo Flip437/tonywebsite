@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :contacts
   resources :category
   resources :repertoire
+  resources :bio
 
 end

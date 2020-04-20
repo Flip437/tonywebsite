@@ -14,21 +14,58 @@
         <div class="row">
             <div class="col-12 col-lg-12">
                 <div class="oneMusic-tabs-content">
-
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab--4" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab3" aria-selected="false">Biographie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Répertoire</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">Evènements</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Articles</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Répertoire</a>
-                        </li>
                     </ul>
-
                
                     <div class="tab-content mb-100" id="myTabContent">
+
+                        <!-- ##### Biographie Area Start ##### -->
+                        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab--4">
+                            <div class="oneMusic-tab-content">
+                                <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+                                    
+                                    <!-- single accordian area -->
+                                    <%= render 'admin/bioformaccordian' %>
+                                
+                                    <!-- single accordian area -->
+                                    <%= render 'admin/biotabaccordian' %>
+                        
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ##### Biographie Area End ##### -->
+
+                        <!-- ##### Repertoires Area Start ##### -->
+                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab--3">
+                            <div class="oneMusic-tab-content">
+                                <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+                                    
+                                    <!-- single accordian area -->
+                                    <%= render 'admin/repertoireformaccordian' %>
+                                
+                                    <!-- single accordian area -->
+                                    <%= render 'admin/repertoiretabaccordian' %>
+
+                                    <!-- single accordian area -->
+                                    <%= render 'admin/categorytabaccordian' %>
+                        
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ##### Repertoires Area End ##### -->
+
                         <!-- ##### Gigs Area Start ##### -->
                         <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
                             <div class="oneMusic-tab-content">
@@ -61,24 +98,8 @@
                         </div>
                         <!-- ##### Articles Area End ##### -->
 
-                        <!-- ##### Repertoires Area Start ##### -->
-                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab--3">
-                            <div class="oneMusic-tab-content">
-                                <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
-                                    
-                                    <!-- single accordian area -->
-                                    <%= render 'admin/repertoireformaccordian' %>
-                                 
-                                    <!-- single accordian area -->
-                                    <%= render 'admin/repertoiretabaccordian' %>
+    
 
-                                    <!-- single accordian area -->
-                                    <%= render 'admin/categorytabaccordian' %>
-                           
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ##### Repertoires Area End ##### -->
 
                     </div>
 
