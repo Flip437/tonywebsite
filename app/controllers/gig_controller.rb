@@ -4,10 +4,6 @@ class GigController < ApplicationController
     @gigs = Gig.all
   end
 
-  def new
-    @gig = Gig.new
-  end
-
   def create
      @gig = Gig.create(
       date: params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date,
