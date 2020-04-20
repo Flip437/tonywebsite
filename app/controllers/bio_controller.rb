@@ -27,7 +27,7 @@ class BioController < ApplicationController
         @bio = Bio.find(params[:id])
         @bio.content = params[:bio][:content]
         @bio.save
-        redirect_to admin_inex_path
+        redirect_to admin_index_path
       end
     
       def destroy

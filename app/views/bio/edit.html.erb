@@ -18,7 +18,7 @@
 <!-- ##### Contact Area Start ##### -->
 <section class="contact-form-area section-padding-100-0">
 <div class="container">
-<%= form_for @bio, url: edit_bio_path(@bio), method: "post" do |f| %>
+<%= form_for @bio, method: "patch" do |f| %>
     <div class="row">      
         <div class="col-12 col-lg-12">
             <div class="contact-content mb-100">
