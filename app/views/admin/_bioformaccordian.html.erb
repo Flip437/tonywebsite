@@ -1,3 +1,11 @@
+<style>
+	trix-editor {
+		height: 500px !important;
+		max-height: 500px !important;
+	  	overflow-y: auto !important;
+	}
+</style>
+
 <div class="panel single-accordion">
     <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Créer ma biographie
             <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
@@ -8,7 +16,7 @@
         <!-- ##### Contact Area Start ##### -->
         <section class="contact-form-area section-padding-100-0">
             <div class="container">
-            <%= form_for @gig, url: gig_index_path, method: "post" do |f| %>
+            <%= form_for @bio, url: bio_index_path, method: "post" do |f| %>
                 <div class="row">      
                     <div class="col-12 col-lg-12">
                         <div class="contact-content mb-100">
@@ -29,7 +37,7 @@
                             </div>
 
                             <div class="justify-content-start">                                          
-                                <%= f.trix_editor :description, class:"form-control", id:"name", placeholder:"Contenu de ma biographie"%>
+                                <%= f.trix_editor :content, id:"name", placeholder:"Contenu de ma biographie" %>
                             </div>
                         </div>
                     </div>

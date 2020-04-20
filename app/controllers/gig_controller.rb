@@ -17,7 +17,7 @@ class GigController < ApplicationController
     )
     if @gig
       flash[:success] = "Vous avez bien ajouté une date à votre agenda :)"
-      redirect_to new_gig_path
+      redirect_to admin_index_path
     else
       flash[:error] = "Une erreur s'est produite :("
       redirect_to root_path

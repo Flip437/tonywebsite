@@ -1,3 +1,11 @@
+<style>
+	trix-editor {
+		height: 500px !important;
+		max-height: 500px !important;
+	  	overflow-y: auto !important;
+	}
+</style>
+
 <!-- ##### Breadcumb Area Start ##### -->
 <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'breadcumb3.jpg' %>);">
     <div class="bradcumbContent">
@@ -9,111 +17,49 @@
 
 <!-- ##### Contact Area Start ##### -->
 <section class="contact-form-area section-padding-100-0">
-    <div class="container">
-        <div class="row">  
-        
-            <div class="col-12 col-lg-4">
-                <div class="contact-content mb-100">
-                    <%= form_for @gig, method: "patch" do |f| %>
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-calendar"></span>
-                            </div>
-                            <%= f.date_field :date, class:"form-control", id:"name", cols:"30", placeholder:"Date"%>
-                        </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-alarm-clock"></span>
-                            </div>                                                        
-                            <%= f.time_field :time, class:"form-control", id:"name", placeholder:"Heure"%>
-                        </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-music"></span>
-                            </div>                                                        
-                            <%= f.text_field :title, class:"form-control", id:"name", placeholder:"Titre"%>
-                        </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-home"></span>
-                            </div>                                                        
-                            <%= f.text_field :place, class:"form-control", id:"name", placeholder:"Lieu"%>
-                        </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-placeholder"></span>
-                            </div>                                                        
-                            <%= f.text_field :adress, class:"form-control", id:"name", placeholder:"Adresse"%>
-                        </div>
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-map"></span>
-                            </div>                                                        
-                            <%= f.text_field :mapurl, class:"form-control", id:"name", placeholder:"url de le map"%>
-                        </div>
-
-
-                        <!-- Single Contact Info -->
-                        <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
-                                <span class="icon-shopping-cart"></span>
-                            </div>                                                        
-                            <%= f.text_field :ticketurl, class:"form-control", id:"name", placeholder:"url de vente des billets"%>
-                        </div>
+<div class="container">
+<%= form_for @bio, url: edit_bio_path(@bio), method: "post" do |f| %>
+    <div class="row">      
+        <div class="col-12 col-lg-12">
+            <div class="contact-content mb-100">
+                <!-- Single Contact Info -->
+                <div class="single-contact-info d-flex align-items-center">
+                    <div class="icon mr-30">
+                        <span class="icon-user-1"></span>
+                    </div>                                                        
+                    <%= f.text_field :title, class:"form-control", id:"name", placeholder:"Titre de ma biographie"%>
                 </div>
-            </div>
 
-            <div class="col-12 col-lg-8">
-                <!-- ##### Google Maps ##### -->
-                <div class="map-area mb-100">
-                    <%=raw @gig.mapurl%>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-12">
-                <div class="contact-content mb-100">
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
-                            <span class="icon-edit  "></span>
-                        </div>                                                        
-                        <%= f.text_area :description, class:"form-control", id:"name", placeholder:"Desciption de l'évènement"%>
+                <!-- Single Contact Info -->
+                <div class="single-contact-info d-flex align-items-center">
+                    <div class="icon mr-30">
+                        <span class="icon-edit"></span>
                     </div>
+                    <%= f.label 'Descripion' %>
+                </div>
+
+                <div class="justify-content-start">                                          
+                    <%= f.trix_editor :content, id:"name", placeholder:"Contenu de ma biographie" %>
                 </div>
             </div>
         </div>
-
-        <div class="row">  
-            <div class="col-12 col-lg-12">
-                <div class="contact-content mb-100">
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex align-items-center">
-                        <div class="col-12 text-center">
-                            <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
-                                Sauvegarder <i class="fa fa-angle-double-right"></i>
-                            <% end %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <% end %>
-        
     </div>
+
+    <div class="row">  
+        <div class="col-12 col-lg-12">
+            <div class="contact-content mb-100">
+                <!-- Single Contact Info -->
+                <div class="single-contact-info d-flex align-items-center">
+                    <div class="col-12 text-center">
+                        <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                            Sauvegarder <i class="fa fa-angle-double-right"></i>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+</div>
 </section>
 <!-- ##### Contact Area End ##### -->

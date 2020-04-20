@@ -20,6 +20,8 @@
                 <tr>
                     <th scope="row"> <%= bio.id %> </th>
                     <td> <%= link_to bio.title, bio_path(bio), class:"post-title" %> </td>
+                    <td> <%= link_to 'Afficher', bio_path(bio) %> </td>
+                    <td> <%= link_to 'Editer', edit_bio_path(bio) %> </td>
                     <td> <%= link_to 'Supprimer',  bio,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement?' } %> </td>
                 </tr>
                 <% end %>

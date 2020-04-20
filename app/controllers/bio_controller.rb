@@ -5,10 +5,10 @@ class BioController < ApplicationController
       end
     
       def create
-         @bio = Bio.create(content: params[:bio][:content])
+         @bio = Bio.create(title: params[:bio][:title], content: params[:bio][:content])
         if @bio
           flash[:success] = "Vous avez bien ajouté une biographie :)"
-          redirect_to new_gig_path
+          redirect_to admin_index_path
         else
           flash[:error] = "Une erreur s'est produite :("
           redirect_to root_path
@@ -25,17 +25,14 @@ class BioController < ApplicationController
     
       def update
         @bio = Bio.find(params[:id])
-    
         @bio.content = params[:bio][:content]
-    
         @bio.save
-    
-        redirect_to gig_path(@bio)
+        redirect_to admin_inex_path
       end
     
       def destroy
         @gig = Bio.find(params[:id])
         @gig.destroy
-        redirect_to gig_index_path
+        redirect_to admin_index_path
       end
 end
