@@ -45,3 +45,7 @@ CDN for fancy box
 rake assets:clobber
 RAILS_ENV=production rake assets:precompile
 #config.assets.compile = false
+
+
+
+! Warning: Your slug size (310 MB) exceeds our soft limit (300 MB) which may affect boot time.

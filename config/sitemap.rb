@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.anthonyrivera-barython.fr"
+SitemapGenerator::Sitemap.default_host = "http://www.anthonyrivera-baryton.fr"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.

@@ -95,7 +95,7 @@ Rails.application.configure do
   config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif *.ico]
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "http://www.anthonyrivera-barython.fr" }
+  config.action_mailer.default_url_options = { host: "http://www.anthonyrivera-baryton.fr" }
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 end
