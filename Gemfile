@@ -81,4 +81,5 @@ gem 'dotenv-rails', :groups => [:development, :test, :production]
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'trix-rails', require: 'trix'
-gem 'rack-cors', :require => 'rack/cors'
+#gem 'rack-cors', :require => 'rack/cors'
+gem 'font_assets'
