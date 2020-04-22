@@ -14,38 +14,29 @@
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
                     <%= form_for(@contact) do |f| %>
-                        <% if @contact.errors.any? %>
-                            <div id="error_explanation">
-                                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>  
-                                <ul>
-                                    <% @contact.errors.full_messages.each do |msg| %>
-                                    <li><%= msg %></li>
-                                    <% end %>
-                                </ul>
-                            </div>
-                        <% end %>
-
-
                         <div class="row">
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="100ms">
-                                    <%= f.text_field :name, class:'form-control', placeholder:"Votre nom" %>
+                                    <%= f.text_field :name, class:'form-control', placeholder:"Votre nom **" %>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="200ms">
-                                    <%= f.text_field :email, class:'form-control', placeholder:"Votre email" %>
+                                    <%= f.text_field :email, class:'form-control', placeholder:"Votre email **" %>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="300ms">
-                                    <%= f.text_field :subject, class:'form-control', placeholder:"Object" %>
+                                    <%= f.text_field :subject, class:'form-control', placeholder:"Object **" %>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                    <%= f.text_area :message, class:'form-control', placeholder:'Votre message'%>
+                                    <%= f.text_area :message, class:'form-control', placeholder:'Votre message **'%>
                                 </div>
+                            </div>
+                            <div class="col-12">
+                                <p style="color: white">** : champs obligatoires </p>
                             </div>
                             <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
                                 <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
@@ -57,7 +48,5 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </section>
