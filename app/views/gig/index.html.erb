@@ -12,7 +12,6 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-9">
-
                 <% @gigs.each do |gig| %>            
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
@@ -39,23 +38,8 @@
                         </div>
                     </div>
                 <% end %>
-
-
-
-                <!-- Pagination -->
-                <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                            <li class="page-item"><a class="page-link" href="#">02</a></li>
-                            <li class="page-item"><a class="page-link" href="#">03</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
             </div>
-
-            <%= render 'staticpage/sidebar' %>
+        <%= render 'staticpage/sidebar' %>
         </div>
     </div>
 </div>
