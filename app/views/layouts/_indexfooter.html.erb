@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row d-flex flex-wrap align-items-center">
             <div class="col-12 col-md-6">
-                <a href="#"><%= image_tag 'logo.png' %></a>
+                <!-- Nav brand -->
+                <%= link_to image_tag('signature.png'), root_path, class:"nav-brand" %>
+                <p style="font-size: 20px"  >Retrouvez-moi ici : <%= link_to (image_tag 'youtube.png'), 'https://www.youtube.com/channel/UCh8d7vvSrjxOp5bhTVRVQvg?view_as=subscriber',  target: :_blank %> <%= link_to (image_tag 'facebook.png'), 'https://www.facebook.com/anthony.rivera.3956',  target: :_blank %> <%= link_to (image_tag 'insta.png'), 'https://www.instagram.com/anthony.ri_ve_ra/',  target: :_blank %></p>
                 <p class="copywrite-text">
                     <!-- Link back to Colorlib cannot be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
@@ -38,9 +40,6 @@
                     </ul>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 </footer>

@@ -7,8 +7,8 @@
                 <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand">  <%= image_tag 'logo.png' %> </a>
-
+                    <%= link_to image_tag('signature_small.png'), root_path, class:"nav-brand" %>
+            
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
                         <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -25,66 +25,30 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li>
-                                    <%= link_to "Biographie", staticpage_bio_path %>
-                                </li>
-                                <li>
-                                    <%= link_to "Répertoire", staticpage_repertoire_path %>
-                                </li>
-                                <li>
-                                    <%= link_to "Gallerie", staticpage_gallery_path %>
-                                </li>
-                                <li>
-                                    <%= link_to "Agenda", gig_index_path %>
-                                </li>
-                      
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="albums-store.html">Albums</a></li>
-                                        <li><a href="event.html">Events</a></li>
-                                        <li><a href="blog.html">News</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="#">Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Even Dropdown</a></li>
-                                                <li><a href="#">Even Dropdown</a></li>
-                                                <li><a href="#">Even Dropdown</a></li>
-                                                <li><a href="#">Even Dropdown</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Even Dropdown</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <!-- Login/Register & Cart Button -->
-                            <div class="login-register-cart-button d-flex align-items-center">
-                                <!-- Login/Register -->
-                                <div class="login-register-btn mr-50">
-                                    <a href="#" id="loginBtn">Login / Register</a>
-                                </div>
-
-                                <!-- Cart Button -->
-                                <div class="cart-btn">
-                                    <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
-                                </div>
-                            </div>
+                                <li> <%= link_to "Biographie", staticpage_bio_path%> </li>
+                                <li> <%= link_to "Répertoire", repertoire_index_path %> </li>
+                                <li> <%= link_to "Gallerie", staticpage_gallery_path %> </li>
+                                <li> <%= link_to "Agenda", gig_index_path %> </li>
+                                <% if current_admin %>
+                                    <li><a href="#">Profil / Déconnexion</a>
+                                        <ul class="dropdown">
+                                            <li> <%= link_to "Profil", edit_admin_registration_path(current_admin.id) %> </li>
+                                            <li> <%= link_to "Déconnexion", destroy_admin_session_path, method: :delete %> </li>
+                                            <li> <%= link_to "Espace Admin", admin_index_path %> </li>
+                                        </ul>
+                                    </li>
+                                <% end %>
+                            </ul>                       
                         </div>
                         <!-- Nav End -->
 
                     </div>
                 </nav>
+
+                <!-- ##### Alert Area Start ##### -->
+                <%= render 'layouts/messages' %>
+                <!-- ##### Alert Area End ##### -->
+
             </div>
         </div>
     </div>

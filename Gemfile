@@ -46,6 +46,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
@@ -72,3 +74,12 @@ gem 'table_print', '~> 1.5', '>= 1.5.6'
 gem 'better_errors', '~> 2.6'
 #gem 'jt-rails-address', '~> 1.0' // https://github.com/jonathantribouharet/jt-rails-address
 gem 'social-share-button', '~> 1.2', '>= 1.2.1'
+gem 'devise', '~> 4.2'
+gem 'letter_opener', '~> 1.4', '>= 1.4.1'
+gem 'premailer-rails'
+gem 'dotenv-rails', :groups => [:development, :test, :production]
+gem 'meta-tags'
+gem 'sitemap_generator'
+gem 'trix-rails', require: 'trix'
+#gem 'rack-cors', :require => 'rack/cors'
+gem 'font_assets'

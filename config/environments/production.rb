@@ -27,12 +27,13 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  #config.assets.compile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = 'http://assets.example.com'
+  # config.action_controller.asset_host = "cdn.anthonyrivera-baryton.fr"
+  config.action_controller.asset_host = ENV['CLOUDFRONT']
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -92,6 +93,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif *.ico] 
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif *.ico]
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "http://www.anthonyrivera-baryton.fr" }
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 end

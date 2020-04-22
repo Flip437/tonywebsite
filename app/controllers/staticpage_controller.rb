@@ -1,10 +1,7 @@
 class StaticpageController < ApplicationController
-  def gallery
-  end
 
   def bio
+    @gigs = Gig.all
   end
 
-  def repertoire
-  end
 end

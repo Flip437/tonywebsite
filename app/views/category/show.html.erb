@@ -1,0 +1,52 @@
+<!-- ##### Breadcumb Area Start ##### -->
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'breadcumb3.jpg' %>);">
+    <div class="bradcumbContent">
+        <p>Voir la catégorie</p>
+        <h2><%=@category.name%></h2>
+    </div>
+</section>
+<!-- ##### Breadcumb Area End ##### -->
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-form-area section-padding-100-0">
+    <div class="container">
+        <div class="row">  
+            <div class="col-12 col-lg-12">
+                <div class="contact-content mb-100">
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <span class="icon-book"></span>
+                        </div>
+                        <p><%=@category.name%></p>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <span class="icon-favorites"></span>
+                        </div>                                                
+                        <p>Cette catégorie contient <%=@category.repertoires.count%> oeuvres</p>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <span class=" icon-eraser"></span>
+                        </div>
+                        <p> <%= link_to 'Supprimer cette catégorie', @category, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette catégorie?' } %> </p>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <span class=" icon-settings-2"></span>
+                        </div>
+                        <p> <%= link_to 'Editer cette Catégorie', edit_category_path(@category) %> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Contact Area End ##### -->

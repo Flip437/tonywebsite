@@ -3,25 +3,24 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <%= display_meta_tags %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>    
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-    <!-- Title -->
-    <title>Tonywebsite</title>
 
     <!-- Favicon -->
     <%= favicon_link_tag 'favicon.ico' %>
 
- 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
  
   </head>
 
-  <body>
+  <body style="background-color: #ededed">
+
     <!-- ##### Header Area Start ##### -->
     <%= render 'layouts/indexheader' %>
     <!-- ##### Header Area End ##### -->

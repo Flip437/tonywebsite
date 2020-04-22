@@ -1,0 +1,52 @@
+<section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(<%= asset_path 'ant.jpg' %>);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                    <p>Restons en contact</p>
+                    <h2>Ecrivez moi</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Contact Form Area -->
+                <div class="contact-form-area">
+                    <%= form_for(@contact) do |f| %>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group wow fadeInUp" data-wow-delay="100ms">
+                                    <%= f.text_field :name, class:'form-control', placeholder:"Votre nom **" %>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group wow fadeInUp" data-wow-delay="200ms">
+                                    <%= f.text_field :email, class:'form-control', placeholder:"Votre email **" %>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group wow fadeInUp" data-wow-delay="300ms">
+                                    <%= f.text_field :subject, class:'form-control', placeholder:"Object **" %>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                    <%= f.text_area :message, class:'form-control', placeholder:'Votre message **'%>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <p style="color: white">** : champs obligatoires </p>
+                            </div>
+                            <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                                <%= button_tag( :class => "btn oneMusic-btn mt-30") do %>
+                                    Envoyer <i class="fa fa-angle-double-right"></i>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

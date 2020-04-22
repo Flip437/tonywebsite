@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
+  #devise_for :users, controllers: { sessions: 'users/sessions' }
   get 'staticpage/gallery'
   get 'staticpage/bio'
   get 'staticpage/repertoire'
@@ -9,5 +11,9 @@ Rails.application.routes.draw do
 
   resources :gig
   resources :admin
+  resources :contacts
+  resources :category
+  resources :repertoire
+  resources :bio
 
 end

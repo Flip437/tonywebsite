@@ -4,10 +4,6 @@ class GigController < ApplicationController
     @gigs = Gig.all
   end
 
-  def new
-    @gig = Gig.new
-  end
-
   def create
      @gig = Gig.create(
       date: params[:gig][:date].to_date.strftime("%d/%m/%Y").to_date,
@@ -20,10 +16,10 @@ class GigController < ApplicationController
       ticketurl: params[:gig][:ticketurl].html_safe
     )
     if @gig
-      #flash[:success] = "Livre ajouté à votre bibliothèque:)"
-      redirect_to new_gig_path
+      flash[:success] = "Vous avez bien ajouté une date à votre agenda :)"
+      redirect_to admin_index_path
     else
-      #flash[:error] = "Erreur d'ajout du livre :("
+      flash[:error] = "Une erreur s'est produite :("
       redirect_to root_path
     end
   end
