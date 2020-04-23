@@ -1252,22 +1252,34 @@ img {
     transform: translateX(-50%); }
     @media only screen and (max-width: 767px) {
       .breadcumb-area .bradcumbContent {
-        width: calc(100% - 60px);
+        width: calc(100% - 30px);
         padding-top: 30px; } }
-    .breadcumb-area .bradcumbContent p {
-      line-height: 1.5;
-      font-size: 16px;
-      color: #5f5f5f; }
-    .breadcumb-area .bradcumbContent h2 {
-      font-size: 30px;
-      letter-spacing: 10px;
-      text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 0; }
-      @media only screen and (max-width: 767px) {
-        .breadcumb-area .bradcumbContent h2 {
-          font-size: 18px;
-          letter-spacing: 5px; } }
+  .breadcumb-area .bradcumbContent p {
+    line-height: 1.5;
+    font-size: 25px;
+    color: white; }
+  .breadcumb-area .bradcumbContent h2 {
+    font-size: 50px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: white;
+    margin-bottom : -20px; }
+
+    @media only screen and (max-width: 767px) {
+      .breadcumb-area .bradcumbContent h2 {
+        font-size: 18px;
+        letter-spacing: 5px; } }
+    @media only screen and (max-width: 767px) {
+      .breadcumb-area .bradcumbContent p {
+        line-height: 1.5;
+        font-size: 16px;
+        color: white; }
+      .breadcumb-area .bradcumbContent h2 {
+        font-size: 25px;
+        color: white;
+        margin-bottom : -15px;
+        letter-spacing: 10px; } }
 
 /* :: 16.0 Blog Area CSS */
 .single-blog-post {
@@ -1370,8 +1382,13 @@ img {
   @media only screen and (max-width: 767px) {
     .blog-sidebar-area {
       margin-top: 100px; } }
+      
+.single-widget-area:hover {
+  opacity: 1.0;
+}
 
 .single-widget-area {
+  opacity: 0.7;
   position: relative;
   z-index: 1;
   background-color: #f5f9fa;
