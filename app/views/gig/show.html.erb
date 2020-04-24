@@ -1,8 +1,8 @@
 <!-- ##### Breadcumb Area Start ##### -->
-<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'writing.jpg' %>);">
-    <div class="bradcumbContent">
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'light.jpg' %>);">
+    <div class="bradcumbContent"  style="background: rgba(0, 0, 0, 0.0)">
         <p>Retrouvez moi en concert</p>
-        <h2>Agenda</h2>
+        <h2 style="color: #999999">évènement</h2>
     </div>
 </section>
 <!-- ##### Breadcumb Area End ##### -->
@@ -35,21 +35,23 @@
                         <p> <%= link_to "Billets", "#{@gig.ticketurl}", :target => "_blank" %> </p>
                     </div>
 
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
-                            <span class=" icon-eraser"></span>
+                    <% if current_admin %>
+                        <!-- Single Contact Info -->
+                        <div class="single-contact-info d-flex align-items-center">
+                            <div class="icon mr-30">
+                                <span class=" icon-eraser"></span>
+                            </div>
+                            <p> <%= link_to 'Supprimer cette date',  @gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement ?' } %> 
                         </div>
-                        <p> <%= link_to 'Supprimer cette date',  @gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement ?' } %> 
-                    </div>
 
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
-                            <span class=" icon-settings-2"></span>
+                        <!-- Single Contact Info -->
+                        <div class="single-contact-info d-flex align-items-center">
+                            <div class="icon mr-30">
+                                <span class=" icon-settings-2"></span>
+                            </div>
+                            <p> <%= link_to "Modifier cette date", edit_gig_path(@gig) %> </p>
                         </div>
-                        <p> <%= link_to "Modifier cette date", edit_gig_path(@gig) %> </p>
-                    </div>
+                    <% end %>
 
                     <!-- Contact Social Info -->
                     <div class="single-contact-info d-flex align-items-center">
