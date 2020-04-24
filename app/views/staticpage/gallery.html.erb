@@ -6,63 +6,186 @@
     </div>
 </section> 
 
-
-<!-- Page Content -->
-<div class="blog-area section-padding-100">
+<!-- ##### Elements Area Start ##### -->
+<section class="blog-area section-padding-100">
     <div class="container">
         <div class="row">
-            <!-- ##### Images Area Start ##### -->
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('anthony_mariage.jpg', class: 'zoom img-fluid'), asset_path("anthony_mariage.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('mar4.jpg', class: 'zoom img-fluid'), asset_path("mar4.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('mar5.jpg', class: 'zoom img-fluid'), asset_path("mar5.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('dreig2.jpg', class: 'zoom img-fluid'), asset_path("dreig2.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('dreig3.jpg', class: 'zoom img-fluid'), asset_path("dreig3.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('dreig5.jpg', class: 'zoom img-fluid'), asset_path("dreig5.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('dreig6.jpg', class: 'zoom img-fluid'), asset_path("dreig6.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('dreig8.jpg', class: 'zoom img-fluid'), asset_path("dreig8.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('dreig.jpg', class: 'zoom img-fluid'), asset_path("dreig.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('doni2.jpg', class: 'zoom img-fluid'), asset_path("doni2.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('doni.jpg', class: 'zoom img-fluid'), asset_path("doni.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <%= link_to image_tag('trist.jpg', class: 'zoom img-fluid'), asset_path("trist.jpg"), class: 'fancybox', rel: 'ligthbox' %>
-            </div>
-            <!-- ##### Images Area End ##### -->
+            <div class="col-12 col-lg-12">
+                <!-- ##### Mariage Forcé Area Start ##### -->
+                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
+                    <div class="panel single-accordion">
+                        <h6 style="margin-bottom: 20px">
+                            <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#collapseOne">Le Mariage Forcé
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                        </h6>
 
-            <!-- ##### Vidéos Area Start ##### -->
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
-                    <div class="album-thumb">
-                        <%= image_tag('mariage_scene.jpg', class: 'zoom img-fluid') %>
-                        <!-- Play Icon -->
-                        <div class="play-icon">
-                            <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), href:"https://www.youtube.com/watch?v=FcCMtgzqG_c", class: "video--play--btn") %>
+                        <div id="collapseOne" class="accordion-content collapse">
+                            <div class="col-12">
+                                <!-- Images Area Start -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('anthony_mariage.jpg', class: 'zoom img-fluid'), asset_path("anthony_mariage.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le mariage forcé.jpg', class: 'zoom img-fluid'), asset_path("Le mariage forcé.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le mariage forcé (2).jpg', class: 'zoom img-fluid'), asset_path("Le mariage forcé (2).jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('mar4.jpg', class: 'zoom img-fluid'), asset_path("mar4.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('mar5.jpg', class: 'zoom img-fluid'), asset_path("mar5.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('mariage_scene.jpg', class: 'zoom img-fluid'), asset_path("mariage_scene.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
+                                            <div class="album-thumb">
+                                                <%= image_tag('mariage_scene.jpg', class: 'zoom img-fluid') %>
+                                                <!-- Play Icon -->
+                                                <div class="play-icon">
+                                                    <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), href:"https://www.youtube.com/watch?v=FcCMtgzqG_c", class: "video--play--btn") %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Images Area End -->
+                            </div>                                    
                         </div>
                     </div>
                 </div>
+                <!-- ##### Mariage Forcé Area End ##### -->
+
+                <!-- ##### Le Ruisseau Noir Area End ##### -->
+                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
+                    <div class="panel single-accordion">
+                        <h6 style="margin-bottom: 20px">
+                            <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Le Ruisseau Noir
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                        </h6>
+                        <div id="collapseTwo" class="accordion-content collapse">
+                            <div class="col-12">
+                                <!-- Images Area Start -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le Ruisseau Noir.jpg', class: 'zoom img-fluid'), asset_path("Le Ruisseau Noir.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le Ruisseau Noir ©CaroleParodi-5343.jpg', class: 'zoom img-fluid'), asset_path("Le Ruisseau Noir ©CaroleParodi-5343.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le Ruisseau Noir ©CaroleParodi-5374.jpg', class: 'zoom img-fluid'), asset_path("Le Ruisseau Noir ©CaroleParodi-5374.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le Ruisseau Noir ©CaroleParodi-5403.jpg', class: 'zoom img-fluid'), asset_path("Le Ruisseau Noir ©CaroleParodi-5403.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le Ruisseau Noir ©CaroleParodi-5410.jpg', class: 'zoom img-fluid'), asset_path("Le Ruisseau Noir ©CaroleParodi-5410.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Le Ruisseau Noir ©CaroleParodi-5416.jpg', class: 'zoom img-fluid'), asset_path("Le Ruisseau Noir ©CaroleParodi-5416.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                </div>
+                                <!-- Images Area End -->
+                            </div>                                    
+                        </div>
+                    </div>
+                </div>
+                <!-- ##### Le Ruisseau Noir Area End ##### -->
+
+                <!-- ##### Die Dreigroschenoper Area Start ##### -->
+                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
+                    <div class="panel single-accordion">
+                        <h6 style="margin-bottom: 20px">
+                            <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Die Dreigroschenoper
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                        </h6>
+                        <div id="collapseThree" class="accordion-content collapse">
+                            <div class="col-12">
+                                <!-- Images Area Start -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Die Dreigroschenoper (2).jpg', class: 'zoom img-fluid'), asset_path("Die Dreigroschenoper (2).jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Die Dreigroschenoper (4).jpg', class: 'zoom img-fluid'), asset_path("Die Dreigroschenoper (4).jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('dreig.jpg', class: 'zoom img-fluid'), asset_path("dreig.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('dreig2.jpg', class: 'zoom img-fluid'), asset_path("dreig2.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('dreig3.jpg', class: 'zoom img-fluid'), asset_path("dreig3.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('dreig5.jpg', class: 'zoom img-fluid'), asset_path("dreig5.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('dreig6.jpg', class: 'zoom img-fluid'), asset_path("dreig6.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('dreig8.jpg', class: 'zoom img-fluid'), asset_path("dreig8.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                </div>
+                                <!-- Images Area End -->
+                            </div>                                    
+                        </div>
+                    </div>
+                </div>
+                <!-- ##### Die Dreigroschenoper Area End ##### -->
+
+                <!-- ##### Rita Donizetti Area Start ##### -->
+                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
+                    <div class="panel single-accordion">
+                        <h6 style="margin-bottom: 20px">
+                            <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFour" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">Rita Donizetti
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                        </h6>
+                        <div id="collapseFour" class="accordion-content collapse">
+                            <div class="col-12">
+                                <!-- Images Area Start -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('Rita Donizetti (3).jpg', class: 'zoom img-fluid'), asset_path("Rita Donizetti (3).jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('RITA Donizetti.jpg', class: 'zoom img-fluid'), asset_path("RITA Donizetti.jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                        <%= link_to image_tag('RITA Donizetti (2).jpg', class: 'zoom img-fluid'), asset_path("RITA Donizetti (2).jpg"), class: 'fancybox', rel: 'ligthbox' %>
+                                    </div>
+                                </div>
+                                <!-- Images Area End -->
+                            </div>                                    
+                        </div>
+                    </div>
+                </div>
+                <!-- ##### Rita Donizetti Area End ##### -->
+
+
+
+
+
+
+
+
+
             </div>
-            <!-- ##### Vidéos Area End ##### -->
         </div>
     </div>
-</div>
+</section>
+<!-- ***** Elements Area End ***** -->
