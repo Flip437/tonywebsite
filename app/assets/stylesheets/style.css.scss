@@ -1641,7 +1641,7 @@ img {
     border-bottom: none;
     margin-bottom: 15px; }
     .oneMusic-tabs-content .nav-tabs .nav-link {
-      background-color: transparent;
+      background-color: white;
       border: 1px solid #000000;
       padding: 0 30px;
       height: 58px;
@@ -1689,6 +1689,10 @@ img {
     font-size: 16px; }
   .single-web-icon:hover {
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15); }
+
+.blog-area {
+  background: linear-gradient(#000000, #bfbfbf)
+}
 
 /* ====== The End ====== */
 
