@@ -1,14 +1,14 @@
 <!-- ##### Breadcumb Area Start ##### -->
 <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'light.jpg' %>);">
-    <div class="bradcumbContent"  style="background: rgba(0, 0, 0, 0.0)">
+    <div class="bradcumbContent" style="background: rgba(0, 0, 0, 0.0)">
         <p>Retrouvez moi en concert</p>
-        <h2 style="color: #999999">évènement</h2>
+        <h2>évènement</h2>
     </div>
 </section>
 <!-- ##### Breadcumb Area End ##### -->
 
 <!-- ##### Contact Area Start ##### -->
-<section class="contact-area section-padding-100-0">
+<section class="blog-area section-padding-100-0">
     <div class="container">
         <div class="row">
 
@@ -16,46 +16,46 @@
                 <div class="contact-content mb-100">
                     <!-- Title -->
                     <div class="contact-title mb-50">
-                        <h5> <%=@gig.title%> </h5>
+                        <h5 style="color: white"> <%=@gig.title%> </h5>
                     </div>
 
                     <!-- Single Contact Info -->
                     <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
+                        <div class="icon mr-30" style="background-color: white">
                             <span class="icon-placeholder"></span>
                         </div>
-                        <p> <%=@gig.adress%> </p>
+                        <p style="color: white"> <%=@gig.adress%> </p>
                     </div>
 
                     <!-- Single Contact Info -->
                     <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
+                        <div class="icon mr-30" style="background-color: white">
                             <span class="icon-shopping-cart"></span>
                         </div>
-                        <p> <%= link_to "Billets", "#{@gig.ticketurl}", :target => "_blank" %> </p>
+                        <p> <%= link_to "Billets", "#{@gig.ticketurl}", style: 'color:#FFFFFF;', :target => "_blank" %> </p>
                     </div>
 
                     <% if current_admin %>
                         <!-- Single Contact Info -->
                         <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
+                            <div class="icon mr-30" style="background-color: white">
                                 <span class=" icon-eraser"></span>
                             </div>
-                            <p> <%= link_to 'Supprimer cette date',  @gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement ?' } %> 
+                            <p style="color: white"> <%= link_to 'Supprimer cette date',  @gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement ?' } %> 
                         </div>
 
                         <!-- Single Contact Info -->
                         <div class="single-contact-info d-flex align-items-center">
-                            <div class="icon mr-30">
+                            <div class="icon mr-30" style="background-color: white">
                                 <span class=" icon-settings-2"></span>
                             </div>
-                            <p> <%= link_to "Modifier cette date", edit_gig_path(@gig) %> </p>
+                            <p style="color: white"> <%= link_to "Modifier cette date", edit_gig_path(@gig) %> </p>
                         </div>
                     <% end %>
 
                     <!-- Contact Social Info -->
                     <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
+                        <div class="icon mr-30" style="background-color: white">
                             <span class=" icon-share"></span>
                         </div>
                         <%= social_share_button_tag("Partager cet évènement !", :url => "https://anthonysiteweb.herokuapp.com/gig/#{@gig.id}") %>
@@ -82,10 +82,10 @@
                 <div class="contact-content mb-100">
                     <!-- Single Contact Info -->
                     <div class="single-contact-info d-flex align-items-center">
-                        <div class="icon mr-30">
+                        <div class="icon mr-30" style="background-color: white">
                             <span class="icon-edit  "></span>
                         </div>                                                        
-                        <%= @gig.description %>
+                        <p  style="color: white"> <%= @gig.description %> </p>
                     </div>
                 </div>
             </div>
