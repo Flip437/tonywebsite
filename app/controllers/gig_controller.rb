@@ -1,6 +1,14 @@
 class GigController < ApplicationController
 
   def index
+    set_meta_tags og: {
+      title:    'Agenda - Anthony Rivera',
+      type:     'article',
+      url:      'http://www.anthonyrivera-baryton.fr/gig/',
+      site_name: 'Anthony Rivera'
+    }
+    @page_title = 'Agenda - Anthony Rivera'
+    @page_description = "Agenda complet d'Anthony Rivera, chanteur d'opéra"
     @gigs = Gig.all
   end
 
@@ -25,6 +33,8 @@ class GigController < ApplicationController
   end
 
   def show
+    @page_title = Gig.find(params[:id]).title
+    @page_description = Gig.find(params[:id]).description
     @gig = Gig.find(params[:id])
   end
 

@@ -1,6 +1,16 @@
 class RepertoireController < ApplicationController
 
   def index
+    @page_title = 'Répertoire - Anthony Rivera'
+    @page_description = "Répertoire complet d'Anthony Rivera, chanteur d'opéra"
+
+    set_meta_tags og: {
+      title:    @page_title,
+      type:     'article',
+      url:      'http://www.anthonyrivera-baryton.fr/repertoire',
+      site_name: 'Anthony Rivera'
+    }
+
     @categories = Category.all
     @repertoires = Repertoire.all
     @gigs = Gig.all

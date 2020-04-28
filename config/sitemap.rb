@@ -1,3 +1,5 @@
+SitemapGenerator::Sitemap.compress = false
+
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.anthonyrivera-baryton.fr"
 
@@ -24,4 +26,23 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
+
+  add root_path, :changefreq => 'daily'
+  
+  Gig.all.each do |gig|
+    add gig_path(gig), :changefreq => 'weekly', :lastmod => gig.updated_at
+  end
+
 end
+
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(fog_provider: 'AWS',
+                                                                    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                                                                    aws_secret_access_key: ENV['AWS_SECRET_KEY'],
+                                                                    fog_directory: 'tonywebsite',
+                                                                    fog_region: 'eu-west-3')
+
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_host = "https://tonywebsite.s3.eu-west-3.amazonaws.com/"
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+
+SitemapGenerator::Sitemap.ping_search_engines('http://www.anthonyrivera-baryton.fr/sitemap')
