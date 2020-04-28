@@ -24,4 +24,11 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
+
+  add root_path, :changefreq => 'daily'
+  
+  Gig.all.each do |gig|
+    add gig_path(gig), :changefreq => 'weekly', :lastmod => gig.updated_at
+  end
+
 end
