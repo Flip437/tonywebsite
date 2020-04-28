@@ -1,3 +1,5 @@
+SitemapGenerator::Sitemap.compress = false
+
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.anthonyrivera-baryton.fr"
 
@@ -32,5 +34,3 @@ SitemapGenerator::Sitemap.create do
   end
 
 end
-
-SitemapGenerator::Sitemap.compress = false
