@@ -1,8 +1,8 @@
 class BioController < ApplicationController
 
   def index
-    set_meta_tags title: 'Biography - Anthony Rivera',
-      description: "Biographie complète d'Anthony Rivera, chanteur d'opéra"
+    @page_title = 'Biographie - Anthony Rivera'
+    @page_description = "Biographie complète d'Anthony Rivera, chanteur d'opéra"
     @bios = Bio.all
     @gigs = Gig.all
   end

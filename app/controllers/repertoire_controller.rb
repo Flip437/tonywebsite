@@ -1,8 +1,8 @@
 class RepertoireController < ApplicationController
 
   def index
-    set_meta_tags title: 'Répertoire - Anthony Rivera',
-      description: "Répertoire complet d'Anthony Rivera, chanteur d'opéra"
+    @page_title = 'Répertoire - Anthony Rivera'
+    @page_description = "Répertoire complet d'Anthony Rivera, chanteur d'opéra"
     @categories = Category.all
     @repertoires = Repertoire.all
     @gigs = Gig.all
