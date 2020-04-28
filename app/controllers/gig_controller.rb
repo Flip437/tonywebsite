@@ -1,6 +1,8 @@
 class GigController < ApplicationController
 
   def index
+    set_meta_tags title: 'Agenda - Anthony Rivera',
+      description: "Agenda complet d'Anthony Rivera, chanteur d'opéra"
     @gigs = Gig.all
   end
 

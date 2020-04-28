@@ -1,11 +1,11 @@
 class BioController < ApplicationController
 
   def index
-      @bios = Bio.all
-      @gigs = Gig.all
-      set_meta_tags title: 'Biography - Marina Viotti',
-              description: "Biographie complète d'Anthony Rivera, chanteur d'opéra"
-    end
+    set_meta_tags title: 'Biography - Anthony Rivera',
+      description: "Biographie complète d'Anthony Rivera, chanteur d'opéra"
+    @bios = Bio.all
+    @gigs = Gig.all
+  end
     
   def create
       @bio = Bio.create(title: params[:bio][:title], content: params[:bio][:content])
