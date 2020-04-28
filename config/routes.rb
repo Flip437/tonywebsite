@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #devise_for :users, controllers: { sessions: 'users/sessions' }
   get 'staticpage/gallery'
   get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
+  get '/sitemap', to: 'pages#sitemap'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root "home#index"
