@@ -1,6 +1,12 @@
 class BioController < ApplicationController
 
   def index
+    set_meta_tags og: {
+      title:    'Biographie - Anthony Rivera',
+      type:     'article',
+      url:      'http://www.anthonyrivera-baryton.fr/bio/',
+      site_name: 'Anthony Rivera'
+    }
     @page_title = 'Biographie - Anthony Rivera'
     @page_description = "Biographie complète d'Anthony Rivera, chanteur d'opéra"
     @bios = Bio.all
