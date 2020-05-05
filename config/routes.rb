@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :category
   resources :repertoire
   resources :bio
-  resources :gallery, only: [:show] do
+  resources :gallery do
     resources :pictures, only: [:create]
   end
   

@@ -8,12 +8,10 @@
         <!-- ##### Contact Area Start ##### -->
         <section class="contact-form-area section-padding-100-0">
             <div class="container">
-            <%= form_tag gallery_pictures_path(@gallery), multipart: true do %>
-
+            <%= form_for @newgallery, url: gallery_pictures_path(@gallery), local: true do |f| %>
                 <div class="row">            
                     <div class="col-12 col-lg-12">
-                        <div class="contact-content mb-100">
-
+                        <div class="contact-content mb-100">    
                             <!-- Single Contact Info -->
                             <div class="single-contact-info d-flex align-items-center">
                                 <div class="icon mr-30">
@@ -27,21 +25,21 @@
                                 <div class="icon mr-30">
                                     <span class="icon-photo-camera"></span>
                                 </div>    
-                                <%= text_field_tag :newgallery, "Nouvelle galleries de photos", class: 'form-control' %>
+                                <%= text_field_tag :newgallery, nil, class: 'form-control', placeholder: 'Saisissez le nom de votre nouvelle gallerie de photos' %>
                             </div>
 
                             <!-- Single Contact Info -->
                             <div class="single-contact-info d-flex align-items-center">
                                 <div class="icon mr-30">
-                                    <span class=" icon-upload"></span>
+                                    <span class="icon-photo-camera"></span>
                                 </div>
-                                <%= file_field :pictures, :multiple => true, class: 'form-control' %>
-                            </div>                     
+                                <%= f.drag_and_drop_file_field :pictures, nil, size_limit: 10_000_000 %>
+                            </div>
 
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="row">  
                     <div class="col-12 col-lg-12">
                         <div class="contact-content mb-100">
@@ -56,8 +54,8 @@
                         </div>
                     </div>
                 </div>
-                <% end %>
 
+            <% end %>
             </div>
         </section>
         <!-- ##### Contact Area End ##### -->
