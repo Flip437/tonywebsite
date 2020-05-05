@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'gallery/show'
   devise_for :admins
   #devise_for :users, controllers: { sessions: 'users/sessions' }
   get 'staticpage/gallery'
@@ -16,5 +17,9 @@ Rails.application.routes.draw do
   resources :category
   resources :repertoire
   resources :bio
+  resources :gallery, only: [:show] do
+    resources :pictures, only: [:create]
+  end
+  
 
 end
