@@ -92,28 +92,8 @@
                     </div>
                 </div>
                 <!-- ##### Mariage Forcé Area End ##### -->
-
-
-        
             </div>
         </div>
     </div>
 </section>
 <!-- ***** Elements Area End ***** -->
-
-
-
-<br><br><br><br><br><br><br><br><br>
-
-<h1>Page Profil</h1>
-
-<p>Bienvenue sur la page d ajout d un avatar pour le User portant l id : <%=@gallery.id%></p>
-
-
-<h3>Changer d'avatar ?</h3>
-<%= form_tag gallery_pictures_path(@gallery), multipart: true do %>
-  <%= file_field_tag :pictures %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
-
-<br><br><br><br><br><br><br><br><br>
