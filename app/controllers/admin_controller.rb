@@ -11,6 +11,7 @@ class AdminController < ApplicationController
         @bio = Bio.new
         @bios = Bio.all
         @newgallery = Gallery.new
+        @gallery = Gallery.first
     end
     
     def new
