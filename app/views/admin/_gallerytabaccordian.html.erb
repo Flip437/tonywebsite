@@ -1,6 +1,6 @@
 <div class="panel single-accordion">
 <h6>
-    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Mes catégories d oeuvres
+    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Mes galleries de photos
             <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
             <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
             </a>
@@ -12,19 +12,20 @@
             <thead>
                 <tr>
                     <th scope="col">id</th>
-                    <th scope="col">Nom de la catégorie</th>
-                    <th scope="col">Nombre d oeuvres</th>
+                    <th scope="col">Nom de la gallerie</th>
+                    <th scope="col">Nombre de photos</th>
+                    <th scope="col">Editer</th>
+                    <th scope="col">Supprimer</th>
                 </tr>
             </thead>
             <tbody>
-            <% @categories.each do |cat| %>
+            <% @galleries.each do |gal| %>
                 <tr>
-                    <th scope="row"> <%= cat.id %> </th>
-                    <td> <%= link_to cat.name, repertoire_path(cat), class:"post-title" %> </td>
-                    <td> <%= cat.repertoires.count %> </td>
-                    <td> <%= link_to 'Afficher', category_path(cat) %> </td>
-                    <td> <%= link_to 'Editer', edit_category_path(cat) %> </td>
-                    <td> <%= link_to 'Supprimer', cat, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette categorie?' } %> </td>
+                    <th scope="row"> <%= gal.id %> </th>
+                    <td> <%= gal.name %> </td>
+                    <td> <%= gal.pictures.count %> </td>
+                    <td> <%= link_to 'Editer', edit_gallery_path(gal) %>
+                    <td> <%= link_to 'Supprimer', gal, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette gallerie?' } %> </td>
                 </tr>
                 <% end %>
             </tbody>

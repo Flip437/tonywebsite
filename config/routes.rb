@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :repertoire
   resources :bio
   resources :gallery do
-    resources :pictures, only: [:create]
+    resources :pictures, only: [:create, :destroy]
   end
   
 
