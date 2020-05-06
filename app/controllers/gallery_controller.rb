@@ -1,5 +1,11 @@
 class GalleryController < ApplicationController
 
+  def index
+    puts "IN INDEXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    puts Gallery.all
+    @galleries = Gallery.all
+  end
+
   def show
     @gallery = Gallery.first
     @pictures = Gallery.first.pictures.all

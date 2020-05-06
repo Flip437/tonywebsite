@@ -1,7 +1,7 @@
 <!-- ##### Breadcumb Area Start ##### -->
 <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'curtain.jpg' %>);">
     <div class="bradcumbContent" style="background: rgba(0, 0, 0, 0.0)">
-        <p>Me reconnaitre show</p>
+        <p>Me reconnaitre index</p>
         <h2>Gallerie</h2>
     </div>
 </section> 
@@ -11,22 +11,23 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-12">
+
+            <%= @galleries.each do |gal| %>
             <!-- ##### Uploaded pictures Area Start ##### -->
             <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
                 <div class="panel single-accordion" style="background: transparent">
                     <h6 style="background: white">
-                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#collapseOne">Le Mariage Forcé
+                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#collapseOne"><%= gal.name %>
                                 <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                 <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                 </a>
                     </h6>
-
                     <div id="collapseOne" class="accordion-content collapse show">
                         <div class="col-12">
                             <!-- Images Area Start -->
                             <div class="row pt-5">
-                            <% if @gallery.pictures.attached? %>
-                                <% @pictures.each do |pic| %>
+                            <% if gal.pictures.attached? %>
+                                <% gal.pictures.each do |pic| %>
                                     <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                                         <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'ligthbox' %>
                                     </div>
@@ -40,7 +41,8 @@
                     </div>
                 </div>
             </div>
-            <!-- ##### Uploaded pictures Area End ##### -->    
+            <!-- ##### Uploaded pictures Area End ##### -->
+            <% end %>
             
             <!-- ##### Mariage Forcé Area Start ##### -->
                 <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
