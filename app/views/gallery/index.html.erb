@@ -1,7 +1,7 @@
 <!-- ##### Breadcumb Area Start ##### -->
 <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'curtain.jpg' %>);">
     <div class="bradcumbContent" style="background: rgba(0, 0, 0, 0.0)">
-        <p>Me reconnaitre index</p>
+        <p>Me reconnaitre</p>
         <h2>Gallerie</h2>
     </div>
 </section> 
@@ -10,40 +10,76 @@
 <section class="blog-area section-padding-100">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-12">
-
-            <% @galleries.each do |gal| %>
             <!-- ##### Uploaded pictures Area Start ##### -->
-            <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">     
+                <div class="col-12 col-lg-12">
+                <% @galleries.each_with_index do |gal, index| %>
+                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
+                    <!-- single accordian area -->  
+                    <div class="panel single-accordion" style="background: transparent">
+                        <h6>
+                            <a role="button" class="" aria-expanded="true" aria-controls="collapse<%= index %>" data-parent="#accordion" data-toggle="collapse" href="#collapse<%= index %>"><%= gal.name %> <%= gal.id %>
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                        </h6>
+                        <div id="collapse<%= index %>" class="accordion-content collapse show">
+                        <!-- Images Area Start -->
+                            <div class="col-12">                        
+                                <div class="row pt-5">
+                                <% if gal.pictures.attached? %>
+                                    <% gal.pictures.each do |pic| %>
+                                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                            <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
+                                        </div>
+                                    <% end %>
+                                <%else%>
+                                    <p>=== Il n y a pas de photos dans cette gallerie ===</p>
+                                <%end%>                                
+                                </div>
+                            </div>
+                        <!-- Images Area End -->                                  
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+                </div>
+            <!-- ##### Uploaded pictures Area End ##### -->
+
+
+            <!-- ##### Uploaded pictures Area Start ##### -->
+            <div class="col-12 col-lg-12">
+            <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
+                <!-- single accordian area -->  
                 <div class="panel single-accordion" style="background: transparent">
-                    <h6 style="background: white">
-                        <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#collapseOne"><%= gal.name %>
+                    <h6>
+                        <a role="button" class="" aria-expanded="true" aria-controls="collapseten" data-parent="#accordion" data-toggle="collapse" href="#collapseten"><%= Gallery.find(5).name %>
                                 <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                 <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                 </a>
                     </h6>
-                    <div id="collapseOne" class="accordion-content collapse show">
-                        <div class="col-12">
-                            <!-- Images Area Start -->
+                    <div id="collapseten" class="accordion-content collapse show">
+                    <!-- Images Area Start -->
+                        <div class="col-12">                        
                             <div class="row pt-5">
-                            <% if gal.pictures.attached? %>
-                                <% gal.pictures.each do |pic| %>
+                            <% if Gallery.find(5).pictures.attached? %>
+                                <% Gallery.find(5).pictures.each do |pic| %>
                                     <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                        <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'ligthbox' %>
+                                        <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[1]' %>
                                     </div>
                                 <% end %>
                             <%else%>
                                 <p>=== Il n y a pas de photos dans cette gallerie ===</p>
                             <%end%>                                
                             </div>
-                            <!-- Images Area End -->
-                        </div>                                    
+                        </div>
+                    <!-- Images Area End -->                                  
                     </div>
                 </div>
             </div>
-            <!-- ##### Uploaded pictures Area End ##### -->
-            <% end %>
             </div>
+        <!-- ##### Uploaded pictures Area End ##### -->
+
+
         </div>
     </div>
 </section>
