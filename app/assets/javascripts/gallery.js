@@ -1,6 +1,24 @@
 $(document).ready(function(){
 
-  $('a[rel="lightbox[1]"]').attr('rel','lightbox[2]');
+  console.log($('a[rel="lightbox[index]"]').length);
+  console.log($('.pt-5').length);
+
+
+
+  $('.pt-5').each(function(index) {
+    console.log($(this).find('thumb').
+  });
+
+
+
+
+
+  $('a[rel="lightbox[index]"]').each(function(index) {
+    console.log(index);
+    $( this ).attr('rel','lightbox['+index+']');
+  });  
+
+ 
 
 
   $(".fancybox").fancybox({
