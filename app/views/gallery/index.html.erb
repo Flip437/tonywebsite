@@ -25,7 +25,7 @@
                         <div id="collapse<%= index %>" class="accordion-content collapse show">
                         <!-- Images Area Start -->
                             <div class="col-12">                        
-                                <div class="row pt-5">
+                                <div class="row pt-5 gallery">
                                 <% if gal.pictures.attached? %>
                                     <% gal.pictures.each do |pic| %>
                                         <div class="col-lg-3 col-md-4 col-xs-6 thumb">
@@ -44,42 +44,6 @@
                 <% end %>
                 </div>
             <!-- ##### Uploaded pictures Area End ##### -->
-
-
-            <!-- ##### Uploaded pictures Area Start ##### -->
-            <div class="col-12 col-lg-12">
-            <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
-                <!-- single accordian area -->  
-                <div class="panel single-accordion" style="background: transparent">
-                    <h6>
-                        <a role="button" class="" aria-expanded="true" aria-controls="collapseten" data-parent="#accordion" data-toggle="collapse" href="#collapseten"><%= Gallery.find(5).name %>
-                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                </a>
-                    </h6>
-                    <div id="collapseten" class="accordion-content collapse show">
-                    <!-- Images Area Start -->
-                        <div class="col-12">                        
-                            <div class="row pt-5">
-                            <% if Gallery.find(5).pictures.attached? %>
-                                <% Gallery.find(5).pictures.each do |pic| %>
-                                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                        <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[1]' %>
-                                    </div>
-                                <% end %>
-                            <%else%>
-                                <p>=== Il n y a pas de photos dans cette gallerie ===</p>
-                            <%end%>                                
-                            </div>
-                        </div>
-                    <!-- Images Area End -->                                  
-                    </div>
-                </div>
-            </div>
-            </div>
-        <!-- ##### Uploaded pictures Area End ##### -->
-
-
         </div>
     </div>
 </section>
