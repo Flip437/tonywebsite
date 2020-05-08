@@ -11,6 +11,7 @@ class AdminController < ApplicationController
         @bio = Bio.new
         @bios = Bio.all
         @newgallery = Gallery.new
+        @newvideo = Video.new
         @gallery = Gallery.first
         @galleries = Gallery.all
     end

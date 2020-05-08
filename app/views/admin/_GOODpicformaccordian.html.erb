@@ -29,6 +29,14 @@
                                 <%= f.drag_and_drop_file_field :pictures, nil, size_limit: 10_000_000 %>
                             </div>
 
+                            <!-- Single Contact Info -->
+                            <div class="single-contact-info d-flex align-items-center">
+                                <div class="icon mr-30">
+                                    <span class="icon-video-camera"></span>
+                                </div>    
+                                <%= f.text_field :videos, class:'form-control', placeholder: 'Saisissez les url des vidéos que vous souhaitez ajouter' %>
+                            </div>
+
                         </div>
                     </div>
                 </div>

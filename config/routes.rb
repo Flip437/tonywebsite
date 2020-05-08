@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'video/create'
+  get 'video/destroy'
   get 'gallery/show'
   devise_for :admins
   #devise_for :users, controllers: { sessions: 'users/sessions' }
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :category
   resources :repertoire
   resources :bio
+  resources :videos, only: [:create, :destroy]
   resources :gallery do
     resources :pictures, only: [:create, :destroy]
   end

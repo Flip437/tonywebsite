@@ -1,9 +1,22 @@
 class GalleryController < ApplicationController
 
   def index
-    puts "IN INDEXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-    puts Gallery.all
     @galleries = Gallery.all
+  end
+
+  def create
+    @gallery = Gallery.create(name: params[:newgallery])
+    if params[:gallery][:pictures] != nil
+      @gallery.pictures.attach(pictures_params[:pictures])
+    end
+
+    if @gallery
+      flash[:success] = "Vous avez bien ajouté des photos à votre gallerie :)"
+      redirect_to admin_index_path
+    else
+      flash[:error] = "Une erreur s'est produite :("
+      redirect_to root_path
+    end 
   end
 
   def show
@@ -17,11 +30,11 @@ class GalleryController < ApplicationController
   end
 
   def update
-    puts "PARAMSSSSSSSSSSSSSSS"
-    puts params
     @gallery = Gallery.find(params[:id])
     @gallery.name = params[:gallery][:name]
-    @gallery.pictures.attach(params[:gallery][:pictures])
+    if params[:gallery][:pictures] != nil
+      @gallery.pictures.attach(params[:gallery][:pictures])
+    end
 
     if @gallery.save
       flash[:success] = "Vous avez bien modifé la gallerie de photos :)"
@@ -41,6 +54,12 @@ class GalleryController < ApplicationController
       flash[:error] = "Une erreur s'est produite :("
       redirect_to admin_index_path
     end
+  end
+
+  private
+
+  def pictures_params
+    params[:gallery].permit(pictures: [])
   end
 
 end
