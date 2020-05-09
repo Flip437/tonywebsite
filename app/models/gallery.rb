@@ -1,4 +1,5 @@
 class Gallery < ApplicationRecord
+    validates_presence_of :name
     has_many_attached :pictures
     has_many :videos, dependent: :destroy
     accepts_nested_attributes_for :videos,

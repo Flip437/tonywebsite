@@ -5,12 +5,20 @@ class GalleryController < ApplicationController
   end
 
   def create
-    @gallery = Gallery.create(name: params[:newgallery])
-    if params[:gallery][:pictures] != nil
-      @gallery.pictures.attach(pictures_params[:pictures])
-    end
+    puts "GALERIE PARAMSSSSSSSSSSSSSSSSSSSSSSS"
+    puts gallery_params
+    puts "VIDEO ATTRIBUTESSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
+    puts gallery_params[:videos_attributes]
 
-    if @gallery
+    # @gallery = Gallery.create(name: gallery_params[:name])
+    # if params[:gallery][:pictures] != nil
+    #   @gallery.pictures.attach(pictures_params[:pictures])
+    # end
+
+    @gallery = Gallery.new(gallery_params)
+
+
+    if @gallery.save
       flash[:success] = "Vous avez bien ajouté des photos à votre gallerie :)"
       redirect_to admin_index_path
     else
@@ -65,6 +73,6 @@ class GalleryController < ApplicationController
   def gallery_params
     params
       .require(:gallery)
-      .permit(:name, videos_attributes: Video.attribute_names.map(&:to_sym).push(:_destroy))
+      .permit(:name, pictures: [], videos_attributes: Video.attribute_names.map(&:to_sym).push(:_destroy))
   end
 end
