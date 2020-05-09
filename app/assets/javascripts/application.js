@@ -21,3 +21,4 @@
 //= require social-share-button
 //= require trix
 //= require active_storage_drag_and_drop
+//= require cocoon

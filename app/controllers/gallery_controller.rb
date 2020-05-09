@@ -62,4 +62,9 @@ class GalleryController < ApplicationController
     params[:gallery].permit(pictures: [])
   end
 
+  def gallery_params
+    params
+      .require(:gallery)
+      .permit(:name, videos_attributes: Video.attribute_names.map(&:to_sym).push(:_destroy))
+  end
 end

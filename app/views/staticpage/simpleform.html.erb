@@ -1,0 +1,29 @@
+<%= simple_form_for @newgallery, url: staticpage_simpleform_path do |f| %>
+    <%= f.error_notification %>
+  
+    <div class="form-inputs">
+      <%= f.input :name %>
+    </div>
+    <h3>Tasks</h3>
+  
+    <table class='table'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Task Name</th>
+          <th>Completed</th>
+        </tr>
+      </thead>
+      <tbody class='videos'>
+        <%= f.simple_fields_for :videos do |builder| %>
+          <%= render 'video_fields', f: builder %>
+        <% end %>
+      </tbody>
+  
+    </table>
+  
+    <div class="form-actions">
+      <%= f.button :submit %>
+      <%= link_to_add_association 'Add Task', f, :videos, :partial => 'staticpage/video_fields', class: 'btn btn-primary', data: { association_insertion_node: '.videos', association_insertion_method: :append } %>
+      </div>
+  <% end %>
