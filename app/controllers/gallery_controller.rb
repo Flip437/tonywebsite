@@ -5,25 +5,14 @@ class GalleryController < ApplicationController
   end
 
   def create
-    puts "GALERIE PARAMSSSSSSSSSSSSSSSSSSSSSSS"
-    puts gallery_params
-    puts "VIDEO ATTRIBUTESSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
-    puts gallery_params[:videos_attributes]
-
-    # @gallery = Gallery.create(name: gallery_params[:name])
-    # if params[:gallery][:pictures] != nil
-    #   @gallery.pictures.attach(pictures_params[:pictures])
-    # end
-
     @gallery = Gallery.new(gallery_params)
-
 
     if @gallery.save
       flash[:success] = "Vous avez bien ajouté des photos à votre gallerie :)"
       redirect_to admin_index_path
     else
-      flash[:error] = "Une erreur s'est produite :("
-      redirect_to root_path
+      flash[:success] = "Une erreur s'est produite :("
+      redirect_to admin_index_path
     end 
   end
 
@@ -33,8 +22,12 @@ class GalleryController < ApplicationController
   end
 
   def edit
+    puts "PARAMSSSSSSSSSSSSSSSS"
+    puts params
     @gallery = Gallery.find(params[:id])
-    @pictures = @gallery.pictures.all
+    @pictures = @gallery.pictures
+    @videos = @gallery.videos
+
   end
 
   def update
