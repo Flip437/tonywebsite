@@ -22,12 +22,9 @@ class GalleryController < ApplicationController
   end
 
   def edit
-    puts "PARAMSSSSSSSSSSSSSSSS"
-    puts params
     @gallery = Gallery.find(params[:id])
     @pictures = @gallery.pictures
     @videos = @gallery.videos
-
   end
 
   def update
