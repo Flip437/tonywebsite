@@ -26,15 +26,45 @@
                         <!-- Images Area Start -->
                             <div class="col-12">                        
                                 <div class="row pt-5 gallery">
-                                <% if gal.pictures.attached? %>
-                                    <% gal.pictures.each do |pic| %>
-                                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                            <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
-                                        </div>
-                                    <% end %>
-                                <%else%>
-                                    <p>=== Il n y a pas de photos dans cette gallerie ===</p>
-                                <%end%>                                
+                                    
+                                        <% if gal.pictures.attached? %>
+                                            <% gal.pictures.each do |pic| %>
+                                                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                                    <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
+                                                </div>
+                                            <% end %>
+                                        <%else%>
+                                            <p>=== Il n y a pas de photos dans cette gallerie ===</p>
+                                        <%end%>
+
+                                        <% if gal.videos != nil %>
+                                            <% gal.videos.each do |vid| %>
+                                                <div class="thumb">                               
+                                                    <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
+                                                        <div class="album-thumb">
+                                                            <%= image_tag('youtube.jpg', class: 'zoom img-fluid') %>
+                                                            <!-- Play Icon -->
+                                                            <div class="play-icon">
+                                                                <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), :href => "#{vid.url}", class: "video--play--btn") %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <%end%>
+                                        <%end%>
+
+                                    
+
+
+
+                                  
+
+                                    
+                                    
+
+
+
+
                                 </div>
                             </div>
                         <!-- Images Area End -->                                  

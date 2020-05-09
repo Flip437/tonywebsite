@@ -1,10 +1,11 @@
-class VideosController < ApplicationController
+class VideoController < ApplicationController
   def create
     @video = Video.new
     @gallery = Gallery.find(params[:gallery])
   end
 
   def destroy
+    puts "IN DESTROUYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
     @gallery = Gallery.find(params[:gallery_id])
     @video =  @gallery.videos.find(params[:id])
     if @video.destroy

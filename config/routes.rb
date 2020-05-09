@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :bio
   resources :gallery do
     resources :pictures, only: [:create, :destroy]
-    resources :videos, only: [:create, :destroy]
+    resources :video, only: [:create, :destroy]
   end
   
 
