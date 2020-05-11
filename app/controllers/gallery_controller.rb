@@ -1,6 +1,16 @@
 class GalleryController < ApplicationController
 
   def index
+    @page_title = 'Gallerie - Anthony Rivera'
+    @page_description = "Gallerie complète d'Anthony Rivera, chanteur d'opéra"
+
+    set_meta_tags og: {
+        title:    @page_title,
+        type:     'article',
+        url:      'http://www.anthonyrivera-baryton.fr/gallery',
+        site_name: 'Anthony Rivera'
+      }
+
     @galleries = Gallery.all
   end
 

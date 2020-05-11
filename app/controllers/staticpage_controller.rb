@@ -1,6 +1,5 @@
 class StaticpageController < ApplicationController
 
-
     def simpleform
         @newgallery = Gallery.new
     end
@@ -16,15 +15,5 @@ class StaticpageController < ApplicationController
             site_name: 'Anthony Rivera'
           }
     end
-
-
-    def todo_list_params
-        params
-          .require(:todo_list)
-          .permit(:name, tasks_attributes: Task.attribute_names.map(&:to_sym).push(:_destroy))
-      end
-
-
-
 
 end
