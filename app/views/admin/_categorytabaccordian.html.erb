@@ -24,7 +24,7 @@
                     <td> <%= cat.repertoires.count %> </td>
                     <td> <%= link_to 'Afficher', category_path(cat) %> </td>
                     <td> <%= link_to 'Editer', edit_category_path(cat) %> </td>
-                    <td> <%= link_to 'Supprimer', cat, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette categorie?' } %> </td>
+                    <td> <%= link_to 'Supprimer', cat, method: :delete, remote: true %> </td>
                 </tr>
                 <% end %>
             </tbody>

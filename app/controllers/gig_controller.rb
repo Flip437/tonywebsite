@@ -61,8 +61,18 @@ class GigController < ApplicationController
 
   def destroy
     @gig = Gig.find(params[:id])
-    @gig.destroy
-    redirect_to gig_index_path
+
+    if @gig.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_index_path }
+        format.js
+        end
+    else
+      flash[:error] = "Une erreur s'est produite :("
+      redirect_to admin_index_path
+    end
+
+
   end
 
 end

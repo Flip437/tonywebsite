@@ -31,7 +31,7 @@
                     <td> <%= rep.category.name %> </td>
                     <td> <%= link_to 'Afficher', repertoire_path(rep) %> </td>
                     <td> <%= link_to 'Editer', edit_repertoire_path(rep) %> </td>
-                    <td> <%= link_to 'Supprimer', rep, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette oeuvre?' } %> </td>
+                    <td> <%= link_to 'Supprimer', rep, method: :delete, remote: true %> </td>
                 </tr>
                 <% end %>
             </tbody>

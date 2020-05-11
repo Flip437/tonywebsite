@@ -45,13 +45,18 @@ class GalleryController < ApplicationController
 
   def destroy
     @gallery = Gallery.find(params[:id])
+    
     if @gallery.destroy
       flash[:success] = "Vous avez bien supprimé la gallerie de photos :)"
-      redirect_to admin_index_path
+      respond_to do |format|
+        format.html { redirect_to admin_index_path }
+        format.js
+        end
     else
       flash[:error] = "Une erreur s'est produite :("
       redirect_to admin_index_path
     end
+
   end
 
   private

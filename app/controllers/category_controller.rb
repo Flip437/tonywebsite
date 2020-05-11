@@ -24,8 +24,16 @@ class CategoryController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
-    redirect_to admin_index_path
+    
+    if @category.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_index_path }
+        format.js
+        end
+    else
+      flash[:error] = "Une erreur s'est produite :("
+      redirect_to admin_index_path
+    end
   end
 
 end
