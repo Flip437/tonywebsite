@@ -87,3 +87,4 @@ gem 'fog-aws'
 gem 'active_storage_drag_and_drop'
 gem 'cocoon'
 gem 'simple_form'
+gem "aws-sdk-s3", require: false
