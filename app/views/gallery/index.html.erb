@@ -1,0 +1,66 @@
+<!-- ##### Breadcumb Area Start ##### -->
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(<%= asset_path 'curtain.jpg' %>);">
+    <div class="bradcumbContent" style="background: rgba(0, 0, 0, 0.0)">
+        <p>Me reconnaitre</p>
+        <h2>Gallerie</h2>
+    </div>
+</section> 
+
+<!-- ##### Elements Area Start ##### -->
+<section class="blog-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <!-- ##### Uploaded pictures Area Start ##### -->
+                <div class="col-12 col-lg-12">
+                <% @galleries.each_with_index do |gal, index| %>
+                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
+                    <!-- single accordian area -->  
+                    <div class="panel single-accordion" style="background: transparent">
+                        <h6>
+                            <a role="button" class="" aria-expanded="true" aria-controls="collapse<%= index %>" data-parent="#accordion" data-toggle="collapse" href="#collapse<%= index %>"><%= gal.name %>
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a>
+                        </h6>
+                        <div id="collapse<%= index %>" class="accordion-content collapse show">
+                        <!-- Images Area Start -->
+                            <div class="col-12">                        
+                                <div class="row pt-5 gallery">
+                                    <% if gal.pictures.attached? %>
+                                        <% gal.pictures.each do |pic| %>
+                                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                                <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
+                                            </div>
+                                        <% end %>
+                                    <%else%>
+                                        <p>=== Il n y a pas de photos dans cette gallerie ===</p>
+                                    <%end%>
+
+                                    <% if gal.videos != nil %>
+                                        <% gal.videos.each do |vid| %>
+                                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">                               
+                                                <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
+                                                    <div class="album-thumb">
+                                                        <%= image_tag(gal.pictures.first, class: 'zoom img-fluid') %>
+                                                        <!-- Play Icon -->
+                                                        <div class="play-icon">
+                                                            <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), :href => "#{vid.url}", class: "video--play--btn") %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <%end%>
+                                    <%end%>                           
+                                </div>
+                            </div>
+                        <!-- Images Area End -->                                  
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+                </div>
+            <!-- ##### Uploaded pictures Area End ##### -->
+        </div>
+    </div>
+</section>
+<!-- ***** Elements Area End ***** -->

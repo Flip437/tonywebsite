@@ -80,8 +80,16 @@ class RepertoireController < ApplicationController
 
   def destroy
     @repertoire = Repertoire.find(params[:id])
-    @repertoire.destroy
-    redirect_to admin_index_path
+    
+    if @repertoire.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_index_path }
+        format.js
+        end
+    else
+      flash[:error] = "Une erreur s'est produite :("
+      redirect_to admin_index_path
+    end
   end
 
 end

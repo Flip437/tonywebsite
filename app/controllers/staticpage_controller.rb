@@ -1,5 +1,9 @@
 class StaticpageController < ApplicationController
 
+    def simpleform
+        @newgallery = Gallery.new
+    end
+
     def gallery
         @page_title = 'Gallerie - Anthony Rivera'
         @page_description = "Gallerie complète d'Anthony Rivera, chanteur d'opéra"

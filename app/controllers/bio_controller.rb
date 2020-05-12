@@ -40,9 +40,16 @@ class BioController < ApplicationController
   end
 
   def destroy
-    @gig = Bio.find(params[:id])
-    @gig.destroy
-    redirect_to admin_index_path
+    @bio = Bio.find(params[:id])
+    if @bio.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_index_path }
+        format.js
+        end
+    else
+      flash[:error] = "Une erreur s'est produite :("
+      redirect_to admin_index_path
+    end
   end
 
 end

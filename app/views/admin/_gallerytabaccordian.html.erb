@@ -1,0 +1,37 @@
+<div class="panel single-accordion">
+<h6>
+    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Mes galleries de photos
+            <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+            <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+            </a>
+</h6>
+<div id="collapseThree" class="accordion-content collapse">
+    <div class="col-12">
+        <!-- Single Web Icon -->
+        <table class="table table-striped table-dark mb-30 mt-30">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nom de la gallerie</th>
+                    <th scope="col">Nombre de photos</th>
+                    <th scope="col">Nombre de vidéos</th>
+                    <th scope="col">Editer</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @galleries.each do |gal| %>
+                <tr class="tabrow">
+                    <th scope="row"> <%= gal.id %> </th>
+                    <td> <%= gal.name %> </td>
+                    <td> <%= gal.pictures.count %> </td>
+                    <td> <%= gal.videos.count %> </td>
+                    <td> <%= link_to 'Editer', edit_gallery_path(gal) %>
+                    <td> <%= link_to 'Supprimer', gal, method: :delete, remote: true %> </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>                                    
+</div>
+</div>

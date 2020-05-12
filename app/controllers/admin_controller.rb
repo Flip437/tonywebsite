@@ -10,12 +10,17 @@ class AdminController < ApplicationController
         @categories = Category.all
         @bio = Bio.new
         @bios = Bio.all
+        @newgallery = Gallery.new
+        @newvideo = Video.new
+        @gallery = Gallery.first
+        @galleries = Gallery.all
     end
     
     def new
         @gig = Gig.new
         @repertoire = Repertoire.new
         @category = Category.new
+        @gallery = Gallery.first
     end
     
     def create

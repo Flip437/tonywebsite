@@ -1621,7 +1621,7 @@ img {
     .single-accordion h6 a.collapsed {
       -webkit-transition-duration: 500ms;
       transition-duration: 500ms;
-      background-color: transparent;
+      background-color: white;
       color: #232323; }
       .single-accordion h6 a.collapsed span {
         color: #000000; }
@@ -1695,6 +1695,23 @@ img {
 
 .blog-area {
   background: linear-gradient(#000000, #1a0600)
+}
+
+
+.btn.btn-danger.btn-xs:hover {
+  border-color: red;
+  background-color: red;
+  font-weight: 800;
+}
+
+.btn.btn-danger.btn-xs {
+  border-color: rgb(126, 0, 0);
+  background-color: rgb(126, 0, 0);
+  font-weight: 800;
+}
+
+a.btn.btn-danger.btn-xs {
+  transition-duration: .20s;
 }
 
 /* ====== The End ====== */

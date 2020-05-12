@@ -22,6 +22,9 @@
                             <a class="nav-link" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Répertoire</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" id="tab--5" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">Photos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">Evènements</a>
                         </li>
                         <li class="nav-item">
@@ -66,6 +69,26 @@
                         </div>
                         <!-- ##### Repertoires Area End ##### -->
 
+                        <!-- ##### Repertoires Area Start ##### -->
+                        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab--5">
+                            <div class="oneMusic-tab-content">
+                                <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+                                    
+                                <!-- single accordian area -->
+                                <%= render 'admin/picformaccordian' %>
+
+                                <!-- single accordian area -->
+                                <!-- render 'admin/videoformaccordian' -->  
+
+                                <!-- single accordian area -->
+                                <%= render 'admin/gallerytabaccordian' %>
+                        
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ##### Repertoires Area End ##### -->
+
+
                         <!-- ##### Gigs Area Start ##### -->
                         <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
                             <div class="oneMusic-tab-content">
@@ -97,9 +120,6 @@
                             </div>
                         </div>
                         <!-- ##### Articles Area End ##### -->
-
-    
-
 
                     </div>
 
