@@ -1697,6 +1697,23 @@ img {
   background: linear-gradient(#000000, #1a0600)
 }
 
+
+.btn.btn-danger.btn-xs:hover {
+  border-color: red;
+  background-color: red;
+  font-weight: 800;
+}
+
+.btn.btn-danger.btn-xs {
+  border-color: rgb(126, 0, 0);
+  background-color: rgb(126, 0, 0);
+  font-weight: 800;
+}
+
+a.btn.btn-danger.btn-xs {
+  transition-duration: .20s;
+}
+
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

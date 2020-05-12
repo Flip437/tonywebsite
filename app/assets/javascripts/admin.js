@@ -1,2 +1,11 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(document).ready(function(){
+
+  $( ".boutton" ).hover(
+    function() {
+      $( this ).append( $( "<span> ***</span>" ) );
+    }, function() {
+      $( this ).find( "span" ).last().remove();
+    }
+  );
+
+});

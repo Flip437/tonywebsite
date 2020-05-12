@@ -48,4 +48,7 @@ SitemapGenerator::Sitemap.create do
     add gig_path(gig), :changefreq => 'weekly', :lastmod => gig.updated_at
   end
 
+  add gallery_index_path, :changefreq => 'weekly'
+  add repertoire_index_path, :changefreq => 'weekly'
+
 end

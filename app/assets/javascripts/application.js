@@ -22,3 +22,4 @@
 //= require trix
 //= require active_storage_drag_and_drop
 //= require cocoon
+//= require admin
