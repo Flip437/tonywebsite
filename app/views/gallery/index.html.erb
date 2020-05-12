@@ -32,8 +32,6 @@
                                                 <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
                                             </div>
                                         <% end %>
-                                    <%else%>
-                                        <p>=== Il n y a pas de photos dans cette gallerie ===</p>
                                     <%end%>
 
                                     <% if gal.videos != nil %>
@@ -41,7 +39,7 @@
                                             <div class="col-lg-3 col-md-4 col-xs-6 thumb">                               
                                                 <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
                                                     <div class="album-thumb">
-                                                        <%= image_tag(gal.pictures.first, class: 'zoom img-fluid') %>
+                                                        <%= image_tag(vid.thumbnail(vid.url), class: 'zoom img-fluid') %>
                                                         <!-- Play Icon -->
                                                         <div class="play-icon">
                                                             <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), :href => "#{vid.url}", class: "video--play--btn") %>
