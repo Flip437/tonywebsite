@@ -6,20 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-cat = Category.create([{name: "Opéra"}, {name: "Théâtre"}])
+# cat = Category.create([{name: "Opéra"}, {name: "Théâtre"}])
+
+# 10.times do 
+#     rep = Repertoire.create(
+#         title: 'Le mariage forcé',
+#         composer: 'Lully',
+#         role: 'Diable',
+#         category: Category.find(1))
+# end
 
 10.times do 
-    rep = Repertoire.create(
-        title: 'Le mariage forcé',
-        composer: 'Lully',
-        role: 'Diable',
-        category: Category.find(1))
-end
-
-10.times do 
-    rep = Repertoire.create(
-        title: 'Raymonde et Lucifer',
-        composer: 'Un con',
-        role: 'Lucifer',
-        category: Category.find(2))
+    rep = Bio.create(title: 'Bio')
 end

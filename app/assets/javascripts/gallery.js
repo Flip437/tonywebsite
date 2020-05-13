@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log('in GALLERY JS');
   $('.gallery').each(function(index) {
     $(this).find(".fancybox").attr("rel","lightbox["+index+"]");
   });

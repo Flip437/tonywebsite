@@ -1,3 +1,4 @@
-$("a").click(function(){
+$("a").each(function(){
+    alert('IN galery .js');
     $(this).closest('tr').remove();
 });

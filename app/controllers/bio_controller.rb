@@ -43,8 +43,8 @@ class BioController < ApplicationController
     @bio = Bio.find(params[:id])
     if @bio.destroy
       respond_to do |format|
-        format.html { redirect_to admin_index_path }
         format.js
+        format.html { redirect_to admin_index_path }
         end
     else
       flash[:error] = "Une erreur s'est produite :("
