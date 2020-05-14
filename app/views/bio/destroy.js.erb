@@ -1,5 +1,11 @@
-console.log('INDESTROY JQUERY');
-$('.delbtn').click(function(){
-    console.log('IN DESTROY JEQUERY AFTER CLICK');
-    $(this).closest('tr').fadeOut();
+$( document ).ready(function() {
+    console.log('IN JS FUNCTION');
+
+
+    $("delbtn").click(function(){
+        $(this).closest('tr').remove();
+    });
+
+
+
 });
