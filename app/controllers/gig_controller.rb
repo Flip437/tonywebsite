@@ -5,18 +5,18 @@ class GigController < ApplicationController
     @page_description = "Agenda complet d'Anthony Rivera, chanteur d'opéra"
 
     set_meta_tags og: {
-      title:    'Agenda - Anthony Rivera',
+      title:    @page_title,
       type:     'article',
       image: "",
       url:      'http://www.anthonyrivera-baryton.fr/gig/',
       site_name: 'Anthony Rivera'
     }
 
-    @gigs = Gig.all
-    # Gig.all.each_with_index do |gig, loop|  
-    #     @gigs << gig
-    #     break if loop > 5
-    # end
+    @gigs = []
+    Gig.all.each_with_index do |gig, loop|  
+        @gigs << gig
+        break if loop > 5
+    end
   end
 
   def create

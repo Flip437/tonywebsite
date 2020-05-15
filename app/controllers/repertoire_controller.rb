@@ -5,7 +5,7 @@ class RepertoireController < ApplicationController
     @page_description = "Répertoire complet d'Anthony Rivera, chanteur d'opéra"
 
     set_meta_tags og: {
-      title:    'Répertoire - Anthony Rivera',
+      title:    @page_title,
       type:     'article',
       image: "",
       url:      'http://www.anthonyrivera-baryton.fr/repertoire',
@@ -14,10 +14,10 @@ class RepertoireController < ApplicationController
 
     @categories = Category.all
     @repertoires = Repertoire.all
-    @gigs = Gig.all
+    @gigs = []
     Gig.all.each_with_index do |gig, loop|  
-      @gigs << gig
-      break if loop > 5
+        @gigs << gig
+        break if loop > 5
     end
   end
 

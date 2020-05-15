@@ -5,7 +5,7 @@ class BioController < ApplicationController
     @page_description = "Biographie complète d'Anthony Rivera, chanteur d'opéra"
 
     set_meta_tags og: {
-      title:    'Biographie - Anthony Rivera',
+      title:    @page_title,
       type:     'article',
       image: "",
       url:      'http://www.anthonyrivera-baryton.fr/bio/',
@@ -13,11 +13,11 @@ class BioController < ApplicationController
     }
 
     @bios = Bio.all
-    @gigs = Gig.all
-    # Gig.all.each_with_index do |gig, loop|  
-    #     @gigs << gig
-    #     break if loop > 5
-    # end
+    @gigs = []
+    Gig.all.each_with_index do |gig, loop|  
+        @gigs << gig
+        break if loop > 5
+    end
   end
 
   def create
