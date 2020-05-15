@@ -5,7 +5,7 @@ class GalleryController < ApplicationController
     @page_description = "Gallerie complète d'Anthony Rivera, chanteur d'opéra"
 
     set_meta_tags og: {
-      title:    @page_title,
+      title:    'Gallerie - Anthony Rivera',
       type:     'article',
       image: "",
       url:      'http://www.anthonyrivera-baryton.fr/gallery',
