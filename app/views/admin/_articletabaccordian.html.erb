@@ -19,15 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-            <% @gigs.each do |gig| %>
+         
                 <tr>
-                    <th scope="row"> <%= gig.id %> </th>
-                    <td> <%= link_to gig.title, gig_path(gig), class:"post-title" %> </td>
-                    <td> <%= gig.date %> </td>
-                    <td> <%= gig.time %> </td>
-                    <td> <%= link_to 'Supprimer',  gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement?' } %> </td>
+                    <th scope="row"> ID </th>
+                    <td> titre </td>
+                    <td> date </td>
+                    <td> modifier </td>
+                    <td> supprimer </td>
                 </tr>
-                <% end %>
+
             </tbody>
         </table>
     </div>                                    
