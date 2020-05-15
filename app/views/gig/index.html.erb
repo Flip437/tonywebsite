@@ -12,6 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-9">
+            <% if Gig.exists? %>
                 <% @gigs.each do |gig| %>            
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
@@ -38,6 +39,18 @@
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <!-- Single Post Start -->
+                <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <!-- Post Title -->
+                        <div class="post-title">
+                            <h3> Votre agenda est vide pour l'instant </h3>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
             </div>
         <%= render 'staticpage/sidebar' %>
         </div>

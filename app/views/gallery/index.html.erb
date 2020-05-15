@@ -12,49 +12,62 @@
         <div class="row">
             <!-- ##### Uploaded pictures Area Start ##### -->
                 <div class="col-12 col-lg-12">
-                <% @galleries.each_with_index do |gal, index| %>
-                <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
-                    <!-- single accordian area -->  
-                    <div class="panel single-accordion" style="background: transparent">
-                        <h6>
-                            <a role="button" class="" aria-expanded="true" aria-controls="collapse<%= index %>" data-parent="#accordion" data-toggle="collapse" href="#collapse<%= index %>"><%= gal.name %>
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                    </a>
-                        </h6>
-                        <div id="collapse<%= index %>" class="accordion-content collapse show">
-                        <!-- Images Area Start -->
-                            <div class="col-12">                        
-                                <div class="row pt-5 gallery">
-                                    <% if gal.pictures.attached? %>
-                                        <% gal.pictures.each do |pic| %>
-                                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                                <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
-                                            </div>
-                                        <% end %>
-                                    <%end%>
+                <% if Gallery.exists? %>
+                    <% @galleries.each_with_index do |gal, index| %>
+                    <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
+                        <!-- single accordian area -->  
+                        <div class="panel single-accordion" style="background: transparent">
+                            <h6>
+                                <a role="button" class="" aria-expanded="true" aria-controls="collapse<%= index %>" data-parent="#accordion" data-toggle="collapse" href="#collapse<%= index %>"><%= gal.name %>
+                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                        </a>
+                            </h6>
+                            <div id="collapse<%= index %>" class="accordion-content collapse show">
+                            <!-- Images Area Start -->
+                                <div class="col-12">                        
+                                    <div class="row pt-5 gallery">
+                                        <% if gal.pictures.attached? %>
+                                            <% gal.pictures.each do |pic| %>
+                                                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                                    <%= link_to image_tag(pic, class: 'zoom img-fluid'), pic, class: 'fancybox', rel: 'lightbox[index]' %>
+                                                </div>
+                                            <% end %>
+                                        <%end%>
 
-                                    <% if gal.videos != nil %>
-                                        <% gal.videos.each do |vid| %>
-                                            <div class="col-lg-3 col-md-4 col-xs-6 thumb">                               
-                                                <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
-                                                    <div class="album-thumb">
-                                                        <%= image_tag(vid.thumbnail(vid.url), class: 'zoom img-fluid') %>
-                                                        <!-- Play Icon -->
-                                                        <div class="play-icon">
-                                                            <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), :href => "#{vid.url}", class: "video--play--btn") %>
+                                        <% if gal.videos != nil %>
+                                            <% gal.videos.each do |vid| %>
+                                                <div class="col-lg-3 col-md-4 col-xs-6 thumb">                               
+                                                    <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
+                                                        <div class="album-thumb">
+                                                            <%= image_tag(vid.thumbnail(vid.url), class: 'zoom img-fluid') %>
+                                                            <!-- Play Icon -->
+                                                            <div class="play-icon">
+                                                                <%= content_tag(:a, content_tag(:span,"", class: "icon-play-button"), :href => "#{vid.url}", class: "video--play--btn") %>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        <%end%>
-                                    <%end%>                           
+                                            <%end%>
+                                        <%end%>                           
+                                    </div>
                                 </div>
+                            <!-- Images Area End -->                                  
                             </div>
-                        <!-- Images Area End -->                                  
                         </div>
                     </div>
-                </div>
+                    <% end %>
+                <% else %>
+                    <!-- Single Post Start -->
+                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Post Title -->
+                            <div class="post-title">
+                                <h3> Vous n'avez pas de galerie pour l'instant </h3>
+                            </div>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
             <!-- ##### Uploaded pictures Area End ##### -->

@@ -27,7 +27,7 @@
                     <td> <%= gal.pictures.count %> </td>
                     <td> <%= gal.videos.count %> </td>
                     <td> <%= link_to 'Editer', edit_gallery_path(gal) %>
-                    <td> <%= link_to 'Supprimer', gal, method: :delete, remote: true %> </td>
+                    <td> <%= link_to 'Supprimer', gal, method: :delete, class: "delbtn", remote: true %> </td>
                 </tr>
                 <% end %>
             </tbody>

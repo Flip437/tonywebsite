@@ -5,7 +5,6 @@ class VideoController < ApplicationController
   end
 
   def destroy
-    puts "IN DESTROUYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
     @gallery = Gallery.find(params[:gallery_id])
     @video =  @gallery.videos.find(params[:id])
     if @video.destroy

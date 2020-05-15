@@ -25,7 +25,7 @@
                     <td> <%= link_to gig.title, gig_path(gig), class:"post-title" %> </td>
                     <td> <%= gig.date %> </td>
                     <td> <%= gig.time %> </td>
-                    <td> <%= link_to 'Supprimer',  gig,  method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement?' } %> </td>
+                    <td> <%= link_to 'Supprimer',  gig,  method: :delete, class: "delbtn", data: { confirm: 'Etes vous sur de vouloir supprimer cet évènement?' } %> </td>
                 </tr>
                 <% end %>
             </tbody>

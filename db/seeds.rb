@@ -16,6 +16,6 @@
 #         category: Category.find(1))
 # end
 
-10.times do 
+30.times do 
     rep = Bio.create(title: 'Bio')
 end
