@@ -9,7 +9,11 @@ class GigController < ApplicationController
     }
     @page_title = 'Agenda - Anthony Rivera'
     @page_description = "Agenda complet d'Anthony Rivera, chanteur d'opéra"
-    @gigs = Gig.all
+    @gigs = []
+    Gig.all.each_with_index do |gig, loop|  
+        @gigs << gig
+        break if loop > 5
+    end
   end
 
   def create

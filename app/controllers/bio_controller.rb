@@ -10,7 +10,11 @@ class BioController < ApplicationController
     @page_title = 'Biographie - Anthony Rivera'
     @page_description = "Biographie complète d'Anthony Rivera, chanteur d'opéra"
     @bios = Bio.all
-    @gigs = Gig.all
+    @gigs = []
+    Gig.all.each_with_index do |gig, loop|  
+        @gigs << gig
+        break if loop > 5
+    end
   end
     
   def create
