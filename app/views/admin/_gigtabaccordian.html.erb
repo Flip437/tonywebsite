@@ -27,7 +27,7 @@
                         <td> <%= gig.date %> </td>
                         <td> <%= gig.time %> </td>
                         <td> <%= link_to 'Editer', edit_gig_path(gig) %> </td>
-                        <td> <%= link_to 'Supprimer',  gig,  method: :delete, remote: true %> </td>
+                        <td> <%= link_to 'Supprimer',  gig,  method: :delete, class: "delbtn", remote: true %> </td>
                     </tr>
                     <% end %>
                 </tbody>
