@@ -11,26 +11,37 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-9">
-            <% @categories.each do |category| %>
+            <% if Category.exists? %>
+                <% @categories.each do |category| %>
+                    <!-- Single Post Start -->
+                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Post Title -->
+                            <div class="post-title">
+                                <h3> <%=category.name%> </h3>
+                            </div>
+                            <!-- Post Excerpt -->
+                            <% @repertoires.where(category: category.id).each do |repertoire| %>
+                                <p><strong><%=repertoire.title%>(<%=repertoire.composer%>) :</strong> <%=repertoire.role%></p><br />
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            <% else %>
                 <!-- Single Post Start -->
                 <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3> <%=category.name%> </h3>
+                            <h3> Vous n'avez pas de répertoire pour l'instant </h3>
                         </div>
-                        <!-- Post Excerpt -->
-                        <% @repertoires.where(category: category.id).each do |repertoire| %>
-                            <p><strong><%=repertoire.title%>(<%=repertoire.composer%>) :</strong> <%=repertoire.role%></p><br />
-                        <% end %>
                     </div>
                 </div>
             <% end %>
-            </div> 
-
+            </div>
             <%= render 'staticpage/sidebar' %>
-
         </div>
     </div>
 </div>
