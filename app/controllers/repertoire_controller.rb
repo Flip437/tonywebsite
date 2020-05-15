@@ -13,11 +13,7 @@ class RepertoireController < ApplicationController
 
     @categories = Category.all
     @repertoires = Repertoire.all
-    @gigs = []
-    Gig.all.each_with_index do |gig, loop|  
-        @gigs << gig
-        break if loop > 5
-    end
+    @gigs = Gig.all
   end
 
   def create
