@@ -1,14 +1,17 @@
 class GigController < ApplicationController
 
   def index
+    @page_title = 'Agenda - Anthony Rivera'
+    @page_description = "Agenda complet d'Anthony Rivera, chanteur d'opéra"
+
     set_meta_tags og: {
-      title:    'Agenda - Anthony Rivera',
+      title:    @page_title,
       type:     'article',
+      image: "http://d1q8yhpgns3eh4.cloudfront.net/assets/core-img/signature_small-034946ef865e1e37df3c663e1fef606b92d929d363f96bee4f814388dc3229c5.png",
       url:      'http://www.anthonyrivera-baryton.fr/gig/',
       site_name: 'Anthony Rivera'
     }
-    @page_title = 'Agenda - Anthony Rivera'
-    @page_description = "Agenda complet d'Anthony Rivera, chanteur d'opéra"
+
     @gigs = []
     Gig.all.each_with_index do |gig, loop|  
         @gigs << gig
