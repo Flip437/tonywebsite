@@ -11,10 +11,11 @@ class ContactsController < ApplicationController
     else
       if @contact.errors.any?
         errors_array = []
+        errors_array << "Votre message n'a pas été envoyé car : "
         @contact.errors.full_messages.each do |msg|
           errors_array << msg
         end
-        flash[:alert] = "Votre message n'a pas été envoyé car : #{errors_array}"
+        flash[:alert] = errors_array
         redirect_to root_path
       end
     end

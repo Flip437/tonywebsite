@@ -256,7 +256,21 @@ img {
 .bg-img {
   background-position: center center;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;}
+
+.latest-albums-area.section-padding-100.bg-img.bg-overlay.bg-fixed.tonybackimg {
+  background-image: image-url("tonyback.jpg");
+  background-position: left;
+  background-size: 300%;
+  background-color: black;
+}
+
+@media (max-width:800px){
+  .latest-albums-area.section-padding-100.bg-img.bg-overlay.bg-fixed.tonybackimg {
+      background-color: black;
+      background-size: 600%;
+  }
+}
 
 .bg-white {
   background-color: #ffffff !important; }

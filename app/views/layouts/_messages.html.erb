@@ -1,10 +1,21 @@
 <% flash.each do |key, value| %>
-  <div class="mt-3 <%="alert alert-" + "#{color(key)}"%>">
-    <a href="#" data-dismiss="alert" class="close">×</a>
-    <ul>
-      <li>
-        <%= value %>
-      </li>
-    </ul>
-  </div>
+  <% if value.class == Array %>
+    <div class="mt-3 <%="alert alert-" + "#{color(key)}"%>">
+      <a href="#" data-dismiss="alert" class="close">X</a>
+      <ul>
+          <% value.each do |val| %>
+            <li> <%= val %> </li>
+          <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <div class="mt-3 <%="alert alert-" + "#{color(key)}"%>">
+      <a href="#" data-dismiss="alert" class="close">X</a>
+      <ul>
+        <li>
+          <%= value %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
