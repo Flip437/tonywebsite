@@ -7,7 +7,7 @@ class HomeController < ApplicationController
             title:    'Anthony Rivera - Opera singer',
             type:     'website',
             description: @page_description,
-            image: "http://d1q8yhpgns3eh4.cloudfront.net/assets/core-img/signature_small-034946ef865e1e37df3c663e1fef606b92d929d363f96bee4f814388dc3229c5.png",
+            image: "https://static.wixstatic.com/media/24fa41_4783aa08dd5e44c0ad068630155f0f29.jpg/v1/fill/w_516,h_762,al_c,q_85,usm_0.66_1.00_0.01/24fa41_4783aa08dd5e44c0ad068630155f0f29.webp",
             url:      'http://www.anthonyrivera-baryton.fr/',
             site_name: 'Anthony Rivera'
           }
