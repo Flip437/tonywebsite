@@ -71,7 +71,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'table_print', '~> 1.5', '>= 1.5.6'
-gem 'better_errors', '~> 2.6'
+gem 'better_errors', '~> 2.8'
 gem 'social-share-button', '~> 1.2', '>= 1.2.1'
 gem 'devise', '~> 4.2'
 gem 'letter_opener', '~> 1.4', '>= 1.4.1'
